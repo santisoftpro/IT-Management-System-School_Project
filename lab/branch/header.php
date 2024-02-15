@@ -46,11 +46,11 @@ require_once 'session.php';
 	}
 
 	th {
-		color: #fff;
+		color: #000;
 	}
 
 	.menu li a {
-		color: #fff;
+		color: #181a1c;
 	}
 
 	.menu li a:hover {
