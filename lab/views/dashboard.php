@@ -161,20 +161,20 @@ include 'header.php';
 		<div class="col-sm-9 col-lg-10 col-md-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-3">
 
 
-			<div class="row">
+			<div class="row  bluecolor">
 				<div class="col-lg-12">
 					<h1 class="page-header" style="color:#fff; font-weight:bold;">Dashboard</h1>
 				</div>
 			</div><!--/.row-->
 
-			<div class="row">
-				<div class="col-xs-12 col-md-6 col-lg-3">
+			<div class="row bluecolor">
+				<div class=" col-xs-12 col-md-6 col-lg-3">
 					<div class="panel panel-blue panel-widget ">
 						<div class="row no-padding">
 							<div class="col-sm-3 col-lg-5 widget-left">
 								<i class="fa fa-hourglass-half fa-3x"></i>
 							</div>
-							<div class="col-sm-9 col-lg-7 widget-right panel" style="background: #1c3849;">
+							<div class="col-sm-9 col-lg-7 widget-right panel">
 								<div class="large peding_val">120</div>
 								<div class="text-muted">Pending reservation</div>
 							</div>
@@ -187,7 +187,7 @@ include 'header.php';
 							<div class="col-sm-3 col-lg-5 widget-left">
 								<i class="fa fa-thumbs-up fa-3x"></i>
 							</div>
-							<div class="col-sm-9 col-lg-7 widget-right" style="background: #1c3849;">
+							<div class="col-sm-9 col-lg-7 widget-right">
 								<div class="large accept_val">52</div>
 								<div class="text-muted">AcceptedReservation</div>
 							</div>
@@ -200,7 +200,7 @@ include 'header.php';
 							<div class="col-sm-3 col-lg-5 widget-left">
 								<i class="fa fa-ban fa-3x"></i>
 							</div>
-							<div class="col-sm-9 col-lg-7 widget-right" style="background: #1c3849;">
+							<div class="col-sm-9 col-lg-7 widget-right">
 								<div class="large cancel_val">24</div>
 								<div class="text-muted">CancelledReservation</div>
 							</div>
@@ -213,7 +213,7 @@ include 'header.php';
 							<div class="col-sm-3 col-lg-5 widget-left">
 								<i class="fa fa-user fa-3x"></i>
 							</div>
-							<div class="col-sm-9 col-lg-7 widget-right" style="background: #1c3849;">
+							<div class="col-sm-9 col-lg-7 widget-right">
 								<div class="large active_user">25.2k</div>
 								<div class="text-muted">Number of active</div>
 							</div>
@@ -226,12 +226,12 @@ include 'header.php';
 			<div class="row">
 
 				<div class="col-md-12 col-xs-12 col-sm-12">
-					<div class="panel panel-primary" style="background-color: #1c3849;">
+					<div class="panel panel-primary" style="background-color: #F5F9FC;">
 						<div class="panel-heading">
 							<h4 class="text-white">Inventory item</h4>
 						</div>
 						<div class="panel-body">
-							<div class="col-md-12" id="inventory" style="height: 500px; color: #fff;"></div>
+							<div class="col-md-12" id="inventory"></div>
 						</div>
 					</div>
 				</div>

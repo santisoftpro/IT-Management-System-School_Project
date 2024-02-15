@@ -153,16 +153,31 @@ $con = mysqli_connect("localhost", "root", "", "lms20");
 			<li><a href="dashboard"><svg class="glyph stroked home">
 						<use xlink:href="#stroked-home"></use>
 					</svg></a></li>
-			<li class="active">Item</li>
+			<li class="active">Item helo</li>
 		</ol>
+
 		<div class="breadcrumb">
-			<button class="btn btn-primary col-sm-offset-10 add_equipment">
+			<button class="btn btn-primary col-sm-offset-5 add_equipment">
 				<svg class="glyph stroked plus sign">
 					<use xlink:href="#stroked-plus-sign" />
 				</svg> &nbsp;
 				Add Item
 			</button>
+			<div class="col-lg-5">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<i class="fa fa-hourglass-half fa-3x"></i>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right panel">
+							<div class="large peding_val">120</div>
+							<div class="text-muted">Pending reservation</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
 	</div><!--/.row-->
 	<div class="row">
 		<div class="col-lg-12">

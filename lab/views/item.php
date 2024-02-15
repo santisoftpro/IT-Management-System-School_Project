@@ -138,17 +138,18 @@ $con = mysqli_connect("localhost", "root", "", "lms20");
 <div class="col-sm-9 col-lg-10 col-md-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-3 main">
 	<div class="row">
 		<ol class="breadcrumb">
+
 			<li><a href="dashboard"><svg class="glyph stroked home">
 						<use xlink:href="#stroked-home"></use>
 					</svg></a></li>
-			<li class="active">Item</li>
+			<li class="active">Item </li>
 		</ol>
 		<div class="breadcrumb">
 			<button class="btn btn-primary col-sm-offset-10 add_equipment">
 				<svg class="glyph stroked plus sign">
 					<use xlink:href="#stroked-plus-sign" />
 				</svg> &nbsp;
-				Add Item
+				Add Item here
 			</button>
 		</div>
 	</div><!--/.row-->

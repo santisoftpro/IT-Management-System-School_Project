@@ -32,6 +32,7 @@ require_once 'session.php';
 
 	<!-- select2 -->
 	<link rel="stylesheet" type="text/css" href="../assets/select/dist/css/select2.min.css">
+	<link rel="stylesheet" href="style.css">
 
 	<!-- amcharts -->
 	<link rel="stylesheet" href="../assets/amcharts/css/export.css" media="all" />
@@ -43,11 +44,11 @@ require_once 'session.php';
 		}
 
 		th {
-			color: #fff;
+			color: #000;
 		}
 
 		.menu li a {
-			color: #fff;
+			color: #181a1c;
 		}
 
 		.menu li a:hover {

@@ -333,7 +333,6 @@ a.bg-danger:hover {
 
 .panel {
 	border: 0;
-	background-color: #0d0c1e;
 }
 
 .panel-heading {
@@ -607,6 +606,10 @@ a.bg-danger:hover {
 	display: none;
 }
 
+.menu li a {
+	color: #353434;
+}
+
 .sidebar form {
 	padding: 20px 15px 5px 15px;
 	border-bottom: 1px solid #eee;
@@ -672,7 +675,7 @@ a.bg-danger:hover {
 
 .sidebar ul.nav li.current a {
 	background-color: #30a5ff;
-	color: #fff !important;
+	color: #353434 !important;
 }
 
 .sidebar ul.nav li.parent ul li a {
@@ -707,7 +710,7 @@ a.bg-danger:hover {
 .breadcrumb {
 	border-radius: 0;
 	padding: 10px 15px;
-	background: #1e1940;
+	background: #2859B5;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 	margin: 0;
 }
@@ -917,7 +920,7 @@ a.todo-list-item:focus {
 
 /*Tables*/
 .table {
-	background: #1a1c41;
+	background: #F5F9FC;
 	color: #555;
 	font-weight: bold;
 }

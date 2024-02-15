@@ -424,8 +424,8 @@ var table_equipment = $('.table_equipment').DataTable({
 			exportOptions: {
 				columns: [0, 1, 2, 3]
 			},
-			message: '<img src="http://4.bp.blogspot.com/_5ydAHJv4lKc/TSm6Sr4vMWI/AAAAAAAAAAQ/B3oGPh3_26k/s1600/logo.png" height="100px" width="100px" style="position: absolute;top:0;left:80px;"><center><h4 style="margin-top:-40px;">REPUBLIC OF THE PHILIPPINES</h4>\
-							<h5>CARLOS HILADO MEMORIAL STATE COLLEGE</h5>\
+			message: '<img src="http://4.bp.blogspot.com/_5ydAHJv4lKc/TSm6Sr4vMWI/AAAAAAAAAAQ/B3oGPh3_26k/s1600/logo.png" height="100px" width="100px" style="position: absolute;top:0;left:80px;"><center><h4 style="margin-top:-40px;">OSSEE PROJECTS</h4>\
+							<h5>UNILAK COMPUS SCHOOLS</h5>\
 							<h6>DEPARTMENT OF INFORMATION SYSTEMS</h6>\
 							</center>',
 			customize: function (win) {

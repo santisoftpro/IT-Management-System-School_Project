@@ -7,11 +7,11 @@
 
 body {
     /*background: url(../img/bg.png);*/
-    background: #15202b;
+    background: #F3F4F9;
 }
 
 .main {
-    background: #15202b !important;
+    background: #F3F4F9 !important;
 }
 
 .dataTables_wrapper .dataTables_filter input {
@@ -24,6 +24,10 @@ body {
 select[name='DataTables_Table_0_length'] {
     padding: 5px;
     border: 1px solid #ddd;
+}
+
+.bluecolor {
+    background-color: rgb(0, 0, 0);
 }
 
 select[name='DataTables_Table_1_length'] {
@@ -135,7 +139,7 @@ h4.color-white {
 
 .sidebar {
     border-right: 1px solid #ddd;
-    background-color: #222;
+    background-color: #F5F9FC;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -242,6 +246,7 @@ ul.dropdown-menu>li>a {
 .panel-primary>.panel-heading {
     background: #30a5ff;
     border: #30a5ff;
+    color: #111;
 }
 
 h4.text-white {

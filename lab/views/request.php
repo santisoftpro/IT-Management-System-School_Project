@@ -150,6 +150,7 @@ $con = mysqli_connect("localhost", "root", "", "lms20");
                         <use xlink:href="#stroked-home"></use>
                     </svg></a></li>
             <li class="active">Item</li>
+
         </ol>
 
     </div><!--/.row-->
