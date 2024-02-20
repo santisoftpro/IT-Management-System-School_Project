@@ -191,10 +191,13 @@ $conn = mysqli_connect('localhost', 'root', '', 'lms20');
                                     <td>
                                         <?= $row['emails'] ?>
                                     </td>
-                                    <td><button class="btn btn-primary">Update</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
-                                            class="btn btn-danger">Remove</button></td>
+                                    <td><a href="view-branch-update?branch_id=<?php echo $row['branch_id']; ?>"><button
+                                                class="btn btn-primary">Update</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="branch-code?delete_id=<?php echo $row['branch_id']; ?>"><button
+                                                class="btn btn-danger">Remove</button></a>
+                                    </td>
                                 </tr>
-                                <?
+                                <?php
                             }
                             ?>
                         </tbody>
@@ -253,26 +256,64 @@ $conn = mysqli_connect('localhost', 'root', '', 'lms20');
             </form>
 
             <?php
+            error_reporting(E_ALL);
+            ini_set('display_errors', 1);
 
             if (isset($_POST['submit_branch'])) {
-                $name = "hello";
-                $sql = mysqli_query($conn, "SELECT * FROM branches");
-                if (mysqli_num_rows($sql) > 0) {
-                    ?>
-                    <script>
-                        alert("This Compus Is already Exist");
-                        window.location = "branch";
-                    </script>
-                    <?php
-                } else {
-                    $query = mysqli_query($conn, "INSERT INTO `branches` (`branch_id`, `branche_name`,`phoneNumber`,`emails`) VALUES (NULL, '$_POST[b_name]','$_POST[phoneNumber]','$_POST[email]');");
-                    if ($query) {
-                        header("Location: branch");
-                    } else {
-                        header("Location: home.php");
-                    }
+                // Database connection
+                $conn = mysqli_connect("localhost", "root", "", "lms20");
+
+                // Check if the connection is successful
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
                 }
+
+                // Data validation and sanitization
+                $name = mysqli_real_escape_string($conn, $_POST['b_name']);
+                $mobile_number = mysqli_real_escape_string($conn, $_POST['phoneNumber']);
+                $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+                // Check if email is valid
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    // Invalid email format
+                    $_SESSION['status'] = 'error';
+                    $_SESSION["msg"] = "Invalid email format";
+                    exit;
+                }
+
+                // SQL query to check if email already exists
+                $sql_check = "SELECT * FROM branches WHERE emails = '$email'";
+                $result_check = mysqli_query($conn, $sql_check);
+
+                if (mysqli_num_rows($result_check) > 0) {
+                    // Email already exists
+                    $_SESSION['status'] = 'warning';
+                    $_SESSION["msg"] = "This Campus already exists";
+                    exit;
+                }
+
+                // SQL query to insert new branch
+                $sql_insert = "INSERT INTO `branches`(`branch_id`, `branche_name`, `phoneNumber`, `emails`) VALUES (null,'$name','$mobile_number','$email')";
+
+                // Print out the SQL query (for debugging)
+                echo "SQL Query: $sql_insert <br>";
+
+                // Execute the insertion query
+                if (mysqli_query($conn, $sql_insert)) {
+                    // Insertion successful
+                    $_SESSION['status'] = 'success';
+                    $_SESSION["msg"] = "This Campus is inserted";
+                } else {
+                    // Insertion failed
+                    $_SESSION['status'] = 'error';
+                    $_SESSION["msg"] = "Error: " . mysqli_error($conn);
+                }
+
+                // Close the database connection
+                mysqli_close($conn);
             }
+            ?>
+
             ?>
         </div>
     </div>
@@ -287,4 +328,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'lms20');
 
 
 
-<?php include 'footer.php'; ?>
+<?php
+include '../js/script.php';
+include 'footer.php';
+?>
