@@ -22,19 +22,21 @@ if ((isset($_POST['submit_branch_update']))) {
     } else {
         $_SESSION['status'] = 'error';
         $_SESSION["msg"] = "Error: " . mysqli_error($conn);
-        echo "failde";
+        header("Location: branch");
     }
 }
 
-$delete_branch = isset($_GET['delete_id']) ? $_GET['$branch'] : null;
+$delete_branch = isset($_GET['delete_id']) ? $_GET['delete_id'] : null;
 if (!empty($delete_branch)) {
     $delete_query = "DELETE FROM `branches` WHERE `branch_id` = '$delete_branch'";
     if (mysqli_query($conn, $delete_query)) {
         $_SESSION['status'] = 'success';
         $_SESSION["msg"] = "The branch already Deleted";
+        header("Location: branch");
     } else {
         $_SESSION['status'] = 'error';
         $_SESSION["msg"] = "Error: " . mysqli_error($conn);
+        header("Location: branch");
     }
 }
 ?>
