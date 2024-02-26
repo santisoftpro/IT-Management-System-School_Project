@@ -45,12 +45,10 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a href="booking.php" class="dropdown-item">Booking</a>
-                        <a href="#" class="dropdown-item">Technicians</a>
-                        <a href="#" class="dropdown-item">Testimonial</a>
-                        <a href="#" class="dropdown-item">404 Page</a>
+                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
                 <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"

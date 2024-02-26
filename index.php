@@ -43,10 +43,12 @@
     </div>
     <!-- Spinner End -->
 
+    <!--  navbar -->
 
     <?php
     require_once 'includes/navbar.php';
     ?>
+    <!-- end nav-bar -->
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
