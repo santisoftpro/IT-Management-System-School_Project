@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Plumberz - Free Plumbing Website Template</title>
+    <title>UNILAK</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,7 +35,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -42,27 +44,30 @@
     <!-- Spinner End -->
 
 
+
     <!-- Topbar Start -->
     <div class="container-fluid bg-light d-none d-lg-block">
         <div class="row align-items-center top-bar">
             <div class="col-lg-3 col-md-12 text-center text-lg-start">
                 <a href="" class="navbar-brand m-0 p-0">
-                    <h1 class="text-primary m-0">Plumberz</h1>
+                    <h1 class="text-primary m-0">UNILAK</h1>
                 </a>
             </div>
             <div class="col-lg-9 col-md-12 text-end">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                    <p class="m-0">123 Street, New York, USA</p>
+                    <p class="m-0">KK Street, KICUKIRO</p>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <i class="far fa-envelope-open text-primary me-2"></i>
-                    <p class="m-0">info@example.com</p>
+                    <p class="m-0">UNILAK@example.com</p>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
+                            class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
+                            class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -75,7 +80,7 @@
     <div class="container-fluid nav-bar bg-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
             <a href="" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
-                <h1 class="text-primary m-0">Plumberz</h1>
+                <h1 class="text-primary m-0">UNILAK</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -84,32 +89,32 @@
                 <div class="navbar-nav me-auto">
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link active">Services</a>
+                    <a href="service.html" class="nav-item nav-link  active">Services</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu fade-up m-0">
-                            <a href="booking.html" class="dropdown-item">Booking</a>
-                            <a href="team.html" class="dropdown-item">Technicians</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
+                            <a href="#" class="dropdown-item">Booking</a>
+                            <a href="#" class="dropdown-item">Technicians</a>
+                            <a href="#" class="dropdown-item">Testimonial</a>
+                            <a href="#" class="dropdown-item">404 Page</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="#" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
+                        style="width: 45px; height: 45px;">
                         <i class="fa fa-phone-alt text-primary"></i>
                     </div>
                     <div class="ms-3">
                         <p class="mb-1 text-white">Emergency 24/7</p>
-                        <h5 class="m-0 text-secondary">+012 345 6789</h5>
+                        <h5 class="m-0 text-secondary">+250 788 6789</h5>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
     <!-- Navbar End -->
-
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 py-5">
@@ -143,48 +148,71 @@
                     </div>
                     <div class="owl-carousel service-carousel position-relative wow fadeInUp" data-wow-delay="0.1s">
                         <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa fa-water fa-2x text-primary"></i>
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                                style="width: 75px; height: 75px;">
+                                <i class="fa fa-laptop fa-2x text-primary"></i>
+
                             </div>
-                            <h4 class="mb-3">Drain Repair</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                            <h4 class="mb-3">BEST DEVICES</h4>
+                            <p>Computer,Laptop,flat screen TV,Keyboard,printer,charger.</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality
+                                Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer
+                                Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7
+                            </p>
+                            <a href="#" class="btn bg-white text-primary w-100 mt-2">Read More<i
+                                    class="fa fa-arrow-right text-secondary ms-2"></i></a>
                         </div>
                         <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa fa-toilet fa-2x text-primary"></i>
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                                style="width: 75px; height: 75px;">
+                                <i class="fa fa-truck-moving fa-2x text-primary"></i>
+
                             </div>
-                            <h4 class="mb-3">Toilet Pipe Repair</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                            <h4 class="mb-3">Supply Branches</h4>
+                            <p>We deliver different devices to all University branch in whole country .</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality
+                                Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer
+                                Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7
+                            </p>
+                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i
+                                    class="fa fa-arrow-right text-secondary ms-2"></i></a>
                         </div>
                         <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa fa-shower fa-2x text-primary"></i>
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                                style="width: 75px; height: 75px;">
+                                <i class="fa fa-pallet fa-2x text-primary"></i>
+
                             </div>
-                            <h4 class="mb-3">Sewer Line Repair</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                            <h4 class="mb-3">Renting Device</h4>
+                            <p>Every Branch is able to rent any device to the students.</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality
+                                Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer
+                                Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7
+                            </p>
+                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i
+                                    class="fa fa-arrow-right text-secondary ms-2"></i></a>
                         </div>
                         <div class="bg-light p-4">
-                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4" style="width: 75px; height: 75px;">
-                                <i class="fa fa-tint fa-2x text-primary"></i>
+                            <div class="d-flex align-items-center justify-content-center border border-5 border-white mb-4"
+                                style="width: 75px; height: 75px;">
+                                <i class="fa fa-store fa-2x text-primary"></i>
                             </div>
-                            <h4 class="mb-3">Water Heater Repair</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality Service</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer Satisfaction</p>
-                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7</p>
-                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i class="fa fa-arrow-right text-secondary ms-2"></i></a>
+                            <h4 class="mb-3">Inventory</h4>
+                            <p>Branches of University have the way they manage thier device stock.</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Quality
+                                Service</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Customer
+                                Satisfaction</p>
+                            <p class="text-primary fw-medium"><i class="fa fa-check text-success me-2"></i>Support 24/7
+                            </p>
+                            <a href="" class="btn bg-white text-primary w-100 mt-2">Read More<i
+                                    class="fa fa-arrow-right text-secondary ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -197,11 +225,13 @@
     <!-- Booking Start -->
     <div class="container-fluid my-5 px-0">
         <div class="video wow fadeInUp" data-wow-delay="0.1s">
-            <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+            <button type="button" class="btn-play" data-bs-toggle="modal"
+                data-src="https://www.youtube.com/embed/DHVNDUKhGpQ?si=7f_KblDU6oKTTU1z" data-bs-target="#videoModal">
                 <span></span>
             </button>
 
-            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content rounded-0">
                         <div class="modal-header">
@@ -211,15 +241,15 @@
                         <div class="modal-body">
                             <!-- 16:9 aspect ratio -->
                             <div class="ratio ratio-16x9">
-                                <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                    allow="autoplay"></iframe>
+                                <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                                    allowscriptaccess="always" allow="autoplay"></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h1 class="text-white mb-4">Emergency Plumbing Service</h1>
+            <h1 class="text-white mb-4">Computer Laboratory management Services</h1>
             <h3 class="text-white mb-0">24 Hours 7 Days a Week</h3>
         </div>
         <div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -6rem;">
@@ -230,10 +260,12 @@
                         <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name"
+                                        style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email"
+                                        style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" style="height: 55px;">
@@ -245,9 +277,9 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
+                                        <input type="text" class="form-control border-0 datetimepicker-input"
+                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker"
+                                            style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -276,9 +308,12 @@
             <div class="owl-carousel testimonial-carousel position-relative wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item text-center">
                     <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">Great experience from UNILAK. You get a lot of opportunities. Work hard to get
+                            it. Be prepared for everything. Maintain your attendance.</p>
                     </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-2"
+                        src="https://site.unilak.ac.rw/wp-content/uploads/2023/03/Dr.-Christine.jpeg"
+                        style="width: 80px; height: 80px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
@@ -286,14 +321,17 @@
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
                     </div>
-                    <h5 class="mb-1">Client Name</h5>
+                    <h5 class="mb-1">Angelique Dusabe</h5>
                     <p class="m-0">Profession</p>
                 </div>
                 <div class="testimonial-item text-center">
                     <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">we would like to express our thanks for the work you have done for us over
+                            the past years. Through your continued hard work and expertise.</p>
                     </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-2"
+                        src="https://site.unilak.ac.rw/wp-content/uploads/2022/04/Prince-Fobay-UNILAK-International-student-1024x683.jpg"
+                        style="width: 80px; height: 80px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
@@ -301,14 +339,17 @@
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
                     </div>
-                    <h5 class="mb-1">Client Name</h5>
+                    <h5 class="mb-1">Patrick Dushimimana</h5>
                     <p class="m-0">Profession</p>
                 </div>
                 <div class="testimonial-item text-center">
                     <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">Thank you for getting back to us in a timely manner and helping us with the
+                            littlest or biggest of problems when it comes to our computers. </p>
                     </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-2"
+                        src="https://site.unilak.ac.rw/wp-content/uploads/2023/03/Dr.-Robert.jpeg"
+                        style="width: 80px; height: 80px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
@@ -316,14 +357,16 @@
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
                     </div>
-                    <h5 class="mb-1">Client Name</h5>
+                    <h5 class="mb-1">Robert Mugabe</h5>
                     <p class="m-0">Profession</p>
                 </div>
                 <div class="testimonial-item text-center">
                     <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">Always reliable and fast, even after I leave for the day, I can always count on
+                            you guys to get requests done. Thank you!</p>
                     </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-2"
+                        src="https://i.ytimg.com/vi/77XR62ytfH4/maxresdefault.jpg" style="width: 80px; height: 80px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
@@ -331,14 +374,14 @@
                         <small class="fa fa-star text-secondary"></small>
                         <small class="fa fa-star text-secondary"></small>
                     </div>
-                    <h5 class="mb-1">Client Name</h5>
+                    <h5 class="mb-1">Clemance Iradukunda</h5>
                     <p class="m-0">Profession</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Testimonial End -->
-        
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -346,8 +389,8 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Street KK 503 ST</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2507 8345 67890</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
@@ -365,18 +408,18 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Drain Cleaning</a>
-                    <a class="btn btn-link" href="">Sewer Line</a>
-                    <a class="btn btn-link" href="">Water Heating</a>
-                    <a class="btn btn-link" href="">Toilet Cleaning</a>
-                    <a class="btn btn-link" href="">Broken Pipe</a>
+                    <a class="btn btn-link" href="">Renting Services</a>
+                    <a class="btn btn-link" href="">Manage IT support</a>
+                    <a class="btn btn-link" href="">Manage Branches</a>
+
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <p>create any acount.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
@@ -385,11 +428,11 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="#">UNILAK Compus</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        Designed By <a class="border-bottom" href="#">SANTISOFT</a>
                     </div>
                 </div>
             </div>

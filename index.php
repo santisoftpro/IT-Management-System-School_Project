@@ -86,13 +86,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav me-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">About</a>
-                    <a href="#" class="nav-item nav-link">Services</a>
+                    <a href="index.php" class="nav-item nav-link active">Home</a>
+                    <a href="about.php" class="nav-item nav-link">About</a>
+                    <a href="service.php" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu fade-up m-0">
-                            <a href="#" class="dropdown-item">Booking</a>
+                            <a href="booking.php" class="dropdown-item">Booking</a>
                             <a href="#" class="dropdown-item">Technicians</a>
                             <a href="#" class="dropdown-item">Testimonial</a>
                             <a href="#" class="dropdown-item">404 Page</a>
