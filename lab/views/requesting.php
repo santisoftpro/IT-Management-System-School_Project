@@ -18,7 +18,7 @@ $getId = $_GET['id'];
                 Dashboard
             </a>
         </li>
-        <li class="parent active">
+        <li class="parent">
             <a href="#sub-item-1" data-toggle="collapse">
                 <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down">
                         <use xlink:href="#stroked-chevron-down"></use>
@@ -33,7 +33,7 @@ $getId = $_GET['id'];
                         Reservations
                     </a>
                 </li>
-                <li class="active">
+                <li class="">
                     <a class="" href="#">
                         <svg class="glyph stroked plus sign">
                             <use xlink:href="#stroked-plus-sign" />
@@ -108,7 +108,7 @@ $getId = $_GET['id'];
                     Graph
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="request">
                     <svg class="glyph stroked line-graph">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-line-graph" />

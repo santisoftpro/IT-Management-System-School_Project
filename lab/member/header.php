@@ -1,8 +1,10 @@
 <?php
-	require_once 'session.php';
+require_once 'session.php';
+
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 
 	<meta charset="utf-8">
@@ -39,13 +41,15 @@
 	<link rel="stylesheet" type="text/css" href="../assets/datetimepicker/datetimepicker.css">
 
 </head>
+
 <body class="index-body">
 
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#sidebar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -62,13 +66,19 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							<li><a href="#"><svg class="glyph stroked male-user">
+										<use xlink:href="#stroked-male-user"></use>
+									</svg>
+									<?php echo $_SESSION['member_branch']; ?>
+								</a></li>
 							<!-- <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li> -->
-							<li><a href="../class/logout/logout_member"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+							<li><a href="../class/logout/logout_member"><svg class="glyph stroked cancel">
+										<use xlink:href="#stroked-cancel"></use>
+									</svg> Logout</a></li>
 						</ul>
 					</li>
 				</ul>
 			</div>
-							
+
 		</div><!-- /.container-fluid -->
-	</nav>	
+	</nav>

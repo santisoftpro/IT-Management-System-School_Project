@@ -1011,8 +1011,8 @@ class display
 	{
 		global $conn;
 		include '../../branch/session_branch.php';
-		$sql = $conn->prepare('SELECT * FROM room WHERE rm_name != ? ORDER BY rm_name ASC');
-		$sql->execute(array('room 310'));
+		$sql = $conn->prepare('SELECT * FROM room WHERE rm_name != ? AND branch_name = ? ORDER BY rm_name ASC');
+		$sql->execute(array('room 310', $member_branch));
 		$fetch = $sql->fetchAll();
 
 		foreach ($fetch as $key => $value) {
