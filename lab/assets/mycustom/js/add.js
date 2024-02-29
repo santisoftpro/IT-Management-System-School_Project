@@ -320,10 +320,6 @@ $('.add_student').click(function () {
 						<input type="number" name="sid_number" class="form-control" required autocomplete="off">\
 					</div>\
 					<div class="form-group">\
-						<label>First Name</label>\
-						<input type="text" name="s_fname" class="form-control text-capitalize" required autocomplete="off">\
-					</div>\
-					<div class="form-group">\
 						<label>Last Name</label>\
 						<input type="text" name="s_lname" class="form-control text-capitalize" required autocomplete="off">\
 					</div>\
@@ -334,6 +330,15 @@ $('.add_student').click(function () {
 							<option>Male</option>\
 							<option>Female</option>\
 						</select>\
+					</div>\
+					<div class="form-group">\
+					<label>Compus</label>\
+					<select name="s_compus" class="form-control" required>\
+						<option disabled selected>Your Compus</option>\
+						<option>Kigali Compus</option>\
+						<option>Nyanza Compus</option>\
+						<option>Rwamagana Compus</option>\
+					</select>\
 					</div>\
 					<div class="form-group">\
 						<label>Contact Number</label>\

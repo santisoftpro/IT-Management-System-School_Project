@@ -54,7 +54,7 @@ class login
 	{
 		global $conn;
 
-		$sql = $conn->prepare('SELECT * FROM member WHERE m_school_id = ? AND branch_name = ? AND m_status = ?');
+		$sql = $conn->prepare('SELECT * FROM member WHERE m_school_id = ? AND m_compus = ? AND m_status = ?');
 		$sql->execute(array($id, $branch_name, 1));
 		$count = $sql->rowCount();
 		$fetch = $sql->fetch();
@@ -63,7 +63,7 @@ class login
 
 			session_start();
 			$_SESSION['member_id'] = $fetch['id'];
-			$_SESSION['member_branch'] = $fetch['branch_name'];
+			$_SESSION['member_branch'] = $fetch['m_compus'];
 			$_SESSION['member_name'] = $fetch['m_fname'] . " " . $fetch['m_lname'];
 			$_SESSION['member_type'] = $fetch['m_type'];
 			echo "1";

@@ -320,7 +320,7 @@ class add
 		// }
 	}
 
-	public function add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_contact, $s_department, $s_major, $s_year, $s_section)
+	public function add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_compus, $s_contact, $s_department, $s_major, $s_year, $s_section)
 	{
 		global $conn;
 
@@ -337,9 +337,9 @@ class add
 		$sql_count = $sql->rowCount();
 		if ($sql_count <= 0) {
 
-			$insert = $conn->prepare('INSERT INTO member(m_school_id, m_fname, m_lname, m_gender, m_contact, m_department, m_year_section, m_type) VALUES(?, ?, ?, ?, ?, ?, ?, ?);
+			$insert = $conn->prepare('INSERT INTO member(m_school_id, m_fname, m_lname, m_gender, m_contact, m_department, m_year_section, m_type,m_password,branch_name) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 						INSERT INTO history_logs(description,table_name,user_id,user_type) VALUES(?,?,?,?)');
-			$insert->execute(array($sid_number, $s_fname, $s_lname, $s_gender, $s_contact, $s_department, $s_year . ' - ' . $s_section, $type, $h_desc, $h_tbl, $sessionid, $sessiontype));
+			$insert->execute(array($sid_number, $s_fname, $s_lname, $s_gender, $s_compus, $s_contact, $s_department, $s_year . ' - ' . $s_section, $type, $h_desc, $h_tbl, $sessionid, $sessiontype));
 			$insert_count = $insert->rowCount();
 
 			if ($insert_count > 0) {
@@ -482,12 +482,14 @@ switch ($key) {
 		$s_fname = ucwords(trim($_POST['s_fname']));
 		$s_lname = ucwords(trim($_POST['s_lname']));
 		$s_gender = trim($_POST['s_gender']);
+		$s_password = trim($_POST['123']);
+		$s_compus = trim($_POST['s_compus']);
 		$s_contact = trim($_POST['s_contact']);
 		$s_department = trim($_POST['s_department']);
 		$s_major = trim($_POST['s_major']);
 		$s_year = trim($_POST['s_year']);
 		$s_section = ucwords(trim($_POST['s_section']));
-		$add_function->add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_contact, $s_department, $s_major, $s_year, $s_section);
+		$add_function->add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_compus, $s_contact, $s_department, $s_major, $s_year, $s_section);
 		break;
 
 	case 'add_newfaculty';
