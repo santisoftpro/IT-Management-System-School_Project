@@ -17,14 +17,14 @@ include 'header.php';
                 Dashboard
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="reserve_logs">
                 <svg class="glyph stroked female user">
                     <use xlink:href="#stroked-female-user" />
                 </svg>
                 Reservation Status
             </a>
-        </li>
+        </li> -->
         <li class="parent ">
             <a href="#sub-item-1" data-toggle="collapse">
                 <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down">
@@ -277,7 +277,10 @@ include 'header.php';
         <div class="member-form"></div>
     </div>
 </div>
-<?php include 'footer.php'; ?>
+<?php
+include '../js/script.php';
+include 'footer.php';
+?>
 
 <script type="text/javascript">
     $(document).ready(function () {

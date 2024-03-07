@@ -151,11 +151,23 @@ include 'header.php';
 						Borrow Item/s
 					</div>
 					<div class="panel-body">
-						<form class="frm_borrow">
+						<form action="code" method="POST"> <!-- class="frm_borrow" -->
 							<div class="form-group">
 								<label class="">Select Borrower</label>
 								<select class="form-control input-lg" name="borrow_membername" required="required">
-									<option></option>
+									<option selected disabled>Select borrower</option>
+									<?php
+									require_once '../views/connect.php';
+									$query = mysqli_query($con, "SELECT * FROM member WHERE m_compus= '$_SESSION[branch_name]'");
+									while ($row = mysqli_fetch_array($query)) {
+										?>
+										<option value="<?= $row['m_school_id'] ?>">
+											<?= $row['m_fname'] . " " . $row['m_lname'] . " -->" . $row['m_school_id'] ?>
+										</option>
+										<?php
+									}
+									?>
+
 								</select>
 							</div>
 							<div class="form-group">
@@ -177,7 +189,7 @@ include 'header.php';
 							</div>
 							<div class="form-group">
 								<div class="pull-right">
-									<button class="btn btn-primary" type="submit">
+									<button class="btn btn-primary" type="submit" name="addbrower">
 										Confirm Borrow
 										<i class="fa fa-chevron-right"></i>
 									</button>
@@ -192,7 +204,9 @@ include 'header.php';
 
 
 
-	<?php include 'footer.php'; ?>
+	<?php
+	include 'footer.php';
+	?>
 
 	<script type="text/javascript">
 		$(document).ready(function () {

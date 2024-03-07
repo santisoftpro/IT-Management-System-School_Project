@@ -67,6 +67,51 @@ if (isset($_POST['add_eqquipment'])) {
 
 }
 
+if (isset($_POST['addbrower'])) {
 
+
+    $name = $_POST['borrow_membername'];
+    $item = $_POST['borrowitem'];
+    $id = $_POST['user_id'];
+    $reserve_room = $_POST['reserve_room'];
+    // $timeLimit = $_POST['expected_time_of_return'];
+    $timeLimit = date('Y-m-d H:i:s', strtotime($_POST['expected_time_of_return']));
+    $h_desc = 'create borrow transaction';
+    $h_tbl = 'borrow';
+    $sessionid = $_SESSION['admin_id'];
+    $sessiontype = $_SESSION['admin_type'];
+
+    $code = date('mdYHis') . '' . $id;
+
+    $select = $conn->prepare('SELECT * FROM borrow WHERE member_id = ? AND status = ? GROUP BY borrowcode');
+    $select->execute(array($name, 1));
+    $row = $select->rowCount();
+    if ($row == 3) {
+        echo json_encode(array("response" => 0, "message" => 'Enable to process your transaction. Please return first your borrowed items'));
+    } else {
+        $borrowIds = array();
+
+        foreach ($item as $key => $items) {
+            $itemsArr = explode("||", $items);
+            $sql = $conn->prepare('INSERT INTO borrow (borrowcode,member_id,item_id,stock_id,user_id,room_assigned,time_limit) VALUES(?,?,?,?,?,?,?)');
+            $sql->execute(array($code, $name, $itemsArr[0], $itemsArr[1], $id, $reserve_room, $timeLimit));
+            $count = $sql->rowCount();
+            $borrowIds[] = $conn->lastInsertId();
+
+            if ($count > 0) {
+                $update = $conn->prepare('UPDATE item_stock SET items_stock = (items_stock - ?) WHERE id = ?');
+                $update->execute(array(1, $itemsArr[1]));
+                $row = $update->rowCount();
+            }
+        }
+
+        echo json_encode(array("response" => 1, "message" => "Successfully Borrowed", "borrowIds" => implode("|", $borrowIds)));
+        $_SESSION['status'] = "success";
+        $_SESSION['msg'] = "Successfully Borrowed";
+
+
+    }
+    header("Location: borrow");
+}
 
 ?>

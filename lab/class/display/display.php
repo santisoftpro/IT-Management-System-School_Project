@@ -594,11 +594,11 @@ class display
 	public function display_item_borrow()
 	{
 		global $conn;
-		include '../../branch/session_branch.php';
-		$sql = $conn->prepare('SELECT *, item_stock.id as re_id, item.id as itemid FROM item_stock LEFT JOIN item ON item.id = item_stock.item_id
-		WHERE item_stock.items_stock > ? AND item.branch_name =? ORDER BY item_status ASC');
-
-		$sql->execute(array(0, $member_branch));
+		// 	include '../../branch/session_branch.php';
+		$sql = $conn->prepare('SELECT *, item_stock.id as re_id, item.id as itemid FROM item_stock
+									LEFT JOIN item ON item.id = item_stock.item_id
+									WHERE item_stock.items_stock > ? ORDER BY item_status ASC');
+		$sql->execute(array(0));
 		$row = $sql->rowCount();
 		$fetch = $sql->fetchAll();
 		if ($row > 0) {

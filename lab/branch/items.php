@@ -17,14 +17,7 @@ include 'header.php';
                 Dashboard
             </a>
         </li>
-        <li>
-            <a href="reserve_logs">
-                <svg class="glyph stroked female user">
-                    <use xlink:href="#stroked-female-user" />
-                </svg>
-                Reservation Status
-            </a>
-        </li>
+
         <li class="parent ">
             <a href="#sub-item-1" data-toggle="collapse">
                 <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down">
