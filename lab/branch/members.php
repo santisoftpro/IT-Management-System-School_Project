@@ -188,7 +188,8 @@ include 'header.php';
                             <?php
                             $con = mysqli_connect("localhost", "root", "", "lms20");
                             $name = $_SESSION['branch_name'];
-                            $query = mysqli_query($con, "SELECT * FROM member WHERE branch_name = '$name'");
+
+                            $query = mysqli_query($con, "SELECT * FROM member WHERE m_compus = '$name'");
                             while ($row = mysqli_fetch_array($query)) {
                                 ?>
                                 <tr>

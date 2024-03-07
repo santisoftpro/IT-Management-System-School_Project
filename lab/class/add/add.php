@@ -9,7 +9,7 @@ require_once "../config/config.php";
 class add
 {
 
-	public function add_room($name)
+	public function add_room($name, $compus_name)
 	{
 		global $conn;
 

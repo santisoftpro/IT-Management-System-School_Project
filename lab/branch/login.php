@@ -61,7 +61,8 @@ $con = mysqli_connect("localhost", "root", "", "lms20");
 											while ($rw = mysqli_fetch_array($query)) {
 												?>
 
-												<option value="<?= $rw['branche_name']; ?>"><?= $rw['branche_name']; ?>
+												<option value="<?= $rw['branche_name']; ?>">
+													<?= $rw['branche_name']; ?>
 												</option>
 												<?php
 											}
@@ -73,9 +74,7 @@ $con = mysqli_connect("localhost", "root", "", "lms20");
 									<br>
 									<button class="btn btn-primary btn-block">Log in</button>
 									<br>
-									<a href="./member/login"> Go to Member's Page</a>
-									<br>
-									<a href="index"> Admin login</a>
+									<a href="../../index.php"> Go to Home</a>
 								</fieldset>
 							</form>
 						</div>

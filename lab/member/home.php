@@ -1,4 +1,5 @@
 <?php
+require_once 'connect.php';
 date_default_timezone_set('Asia/Manila');
 include 'header.php';
 ?>
@@ -51,9 +52,20 @@ include 'header.php';
 								<div class="form-group">
 									<label class="col-md-3 control-label" for="name">Items (maximum of 5 items)</label>
 									<div class="col-md-9">
-										<select class="form-control input-lg borrowitem" name="reserve_item[]"
-											multiple="multiple" required="required" style="width: 100%">
-											<option></option>
+										<select class="form-control input-lg" name="reserve_item[]" required="required"
+											style="width: 100%">
+											<?php
+											$query = "SELECT * FROM `item` WHERE `branch_name` = '$_SESSION[member_branch]'";
+											$query_run = mysqli_query($con, $query);
+											while ($row = mysqli_fetch_array($query_run)) {
+												?>
+												<option value="<?= $row['i_model'] ?>">
+													<?= $row['i_model'] ?>
+												</option>
+												<?php
+											}
+											?>
+
 										</select>
 									</div>
 								</div>
@@ -79,15 +91,17 @@ include 'header.php';
 									<div class="col-md-9">
 										<select class="form-control" name="reserve_room" required>
 											<?php
-											// include "../views/connect.php";
-											// $sql = "SELECT * FROM room WHERE branch_name = '$_SESSION[member_branch]'";
-											// $run_sql = mysqli_query($con, $sql);
-											// if ($row = mysqli_fetch_array($run_sql)) {
-											?>
-											<!-- <option value=""></option> -->
-											<?php
-											//}
-											
+
+											$sql = "SELECT * FROM room WHERE branch_name = '$_SESSION[member_branch]'";
+											$run_sql = mysqli_query($con, $sql);
+											if ($row = mysqli_fetch_array($run_sql)) {
+												?>
+												<option value="<?= $row['rm_name'] ?>">
+													<?= $row['rm_name'] ?>
+												</option>
+												<?php
+											}
+
 											?>
 
 										</select>

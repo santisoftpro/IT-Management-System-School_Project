@@ -192,7 +192,7 @@ include 'header.php';
                                             <ul class="dropdown-menu">
                                                 <li><a href="javascript:;" class="edit-room"><i class="fa fa-edit"></i>
                                                         Edit</a></li>
-                                                <li><a href="room_info?name=' . $myname . '&id=' . $value[" id"] .'"><i
+                                                <li><a href="room_info?name=' . $myname . '&id=' . $value[" id"].'"><i
                                                             class="fa fa-search"></i> View Items</a></li>
                                             </ul>
                                         </div>
