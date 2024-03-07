@@ -260,7 +260,7 @@ include 'header.php';
                 </svg>
                 Add Item
             </h4>
-            <form class="frm_addequipment" enctype="multipart/form-data">
+            <form action="code" enctype="multipart/form-data" method="POST">
                 <input type="hidden" name="key" value="add_equipment" />
                 <div class="form-group">
                     <label>Device ID</label>
@@ -335,7 +335,7 @@ include 'header.php';
                         <option disabled selected>Please select status</option>
                         <?php
 
-                        $query = mysqli_query($con, "SELECT * FROM branches");
+                        $query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name = '$_SESSION[branch_name]'");
                         while ($rw = mysqli_fetch_array($query)) {
                             ?>
 
@@ -371,7 +371,7 @@ include 'header.php';
                             </button>
                         </div>
                         <div class="col-md-6 col-sm-12 col-xs-12">
-                            <button class="btn btn-primary btn-block" type="submit">
+                            <button class="btn btn-primary btn-block" type="submit" name="add_eqquipment">
                                 ADD
                                 <i class="fa fa-check"></i>
                             </button>
