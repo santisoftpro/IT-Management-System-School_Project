@@ -303,11 +303,11 @@ include 'header.php';
                     <label>Quantity</label>
                     <input type="number" name="e_stock" class="form-control" min="1" required>
                 </div>
-                <div class="form-group hide">
+                <!-- <div class="form-group hide">
                     <label>Assign Room</label>
                     <select name="e_assigned" class="form-control" required>
                     </select>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label>Type</label>
                     <select type="text" name="e_type" class="form-control" required>
@@ -388,7 +388,10 @@ include 'header.php';
 
 
 
-<?php include 'footer.php'; ?>
+<?php
+include '../js/script.php';
+include 'footer.php';
+?>
 
 <script type="text/javascript">
     $(document).ready(function () {

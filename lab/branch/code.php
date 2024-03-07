@@ -10,7 +10,7 @@ if (isset($_POST['add_eqquipment'])) {
     $e_brand = $_POST['e_brand'];
     $e_description = $_POST['e_description'];
     $e_stock = $_POST['e_stock'];
-    // $e_assigned = $_POST['e_assigned'];
+    $e_assigned = 200;
     $e_type = $_POST['e_type'];
     $e_status = $_POST['e_status'];
     $e_mr = $_POST['e_mr'];
@@ -34,7 +34,7 @@ if (isset($_POST['add_eqquipment'])) {
     $extension = pathinfo($imageName, PATHINFO_EXTENSION);
     $tmpData = $_FILES['e_photo']['tmp_name'];
     $fileName = time();
-    $fileStatus = move_uploaded_file($tmpData, '../uploads' . $fileName . "." . $extension);
+    $fileStatus = move_uploaded_file($tmpData, '../uploads/' . $fileName . "." . $extension);
 
     $file = "";
 
@@ -60,7 +60,10 @@ if (isset($_POST['add_eqquipment'])) {
         echo '0';
     }
 
+    $_SESSION['status'] = "success";
+    $_SESSION['msg'] = "Item Inserted";
 
+    header("Location: items");
 
 }
 
