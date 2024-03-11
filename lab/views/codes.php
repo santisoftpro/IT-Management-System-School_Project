@@ -96,7 +96,7 @@ if (isset($_GET['confirmRequest'])) {
         $_SESSION["msg"] = "Failed to Send Request";
 
     }
-    header("Location: requesting");
+    header("Location: request");
 }
 
 
