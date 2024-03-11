@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include 'connect.php';
 ?>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 col-md-2 sidebar">
 	<form role="search">
@@ -311,7 +312,7 @@ include 'header.php';
 										<select id="selectBranch" class="form-control">
 											<option value="" hidden>SELECT COMPUS</option>
 											<?php
-											$con = mysqli_connect("localhost", "root", "", "lms20");
+											// $con = mysqli_connect("localhost", "root", "", "lms20");
 											$query = "SELECT * FROM branches ORDER BY branche_name ASC";
 											$query_run = mysqli_query($con, $query);
 											while ($row = mysqli_fetch_array($query_run)) {

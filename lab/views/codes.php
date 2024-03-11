@@ -2,13 +2,13 @@
 session_start();
 
 include('smtp/PHPMailerAutoload.php');
+include 'connect.php';
 
 $requstId = $_GET['requstId'];
 $status = $_GET['status'];
 $e_message = $_GET['e_message'];
 $branchName = $_GET['compus'];
 
-$con = mysqli_connect("localhost", "root", "", "lms20");
 $sql = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$branchName'");
 while ($row = mysqli_fetch_array($sql)) {
     $email = $row["emails"];

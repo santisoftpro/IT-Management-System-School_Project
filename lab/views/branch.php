@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-$conn = mysqli_connect('localhost', 'root', '', 'lms20');
+include 'connect.php';
 ?>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 col-md-2 sidebar">
     <form role="search">
@@ -172,7 +172,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'lms20');
                         </thead>
                         <tbody>
                             <?php
-                            $branch_query = mysqli_query($conn, "SELECT * FROM branches");
+                            $branch_query = mysqli_query($con, "SELECT * FROM branches");
                             while ($row = mysqli_fetch_array($branch_query)) {
                                 // echo '<td>' . $row['branch_id'] . '</td>';
                                 // echo '<td>' . $row['branche_name'] . '</td>';
@@ -261,17 +261,17 @@ $conn = mysqli_connect('localhost', 'root', '', 'lms20');
 
             if (isset($_POST['submit_branch'])) {
                 // Database connection
-                $conn = mysqli_connect("localhost", "root", "", "lms20");
+                $con = mysqli_connect("localhost", "root", "", "lms20");
 
                 // Check if the connection is successful
-                if (!$conn) {
+                if (!$con) {
                     die("Connection failed: " . mysqli_connect_error());
                 }
 
                 // Data validation and sanitization
-                $name = mysqli_real_escape_string($conn, $_POST['b_name']);
-                $mobile_number = mysqli_real_escape_string($conn, $_POST['phoneNumber']);
-                $email = mysqli_real_escape_string($conn, $_POST['email']);
+                $name = mysqli_real_escape_string($con, $_POST['b_name']);
+                $mobile_number = mysqli_real_escape_string($con, $_POST['phoneNumber']);
+                $email = mysqli_real_escape_string($con, $_POST['email']);
 
                 // Check if email is valid
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -283,7 +283,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'lms20');
 
                 // SQL query to check if email already exists
                 $sql_check = "SELECT * FROM branches WHERE emails = '$email'";
-                $result_check = mysqli_query($conn, $sql_check);
+                $result_check = mysqli_query($con, $sql_check);
 
                 if (mysqli_num_rows($result_check) > 0) {
                     // Email already exists
@@ -299,18 +299,18 @@ $conn = mysqli_connect('localhost', 'root', '', 'lms20');
                 echo "SQL Query: $sql_insert <br>";
 
                 // Execute the insertion query
-                if (mysqli_query($conn, $sql_insert)) {
+                if (mysqli_query($con, $sql_insert)) {
                     // Insertion successful
                     $_SESSION['status'] = 'success';
                     $_SESSION["msg"] = "This Campus is inserted";
                 } else {
                     // Insertion failed
                     $_SESSION['status'] = 'error';
-                    $_SESSION["msg"] = "Error: " . mysqli_error($conn);
+                    $_SESSION["msg"] = "Error: " . mysqli_error($con);
                 }
 
                 // Close the database connection
-                mysqli_close($conn);
+                mysqli_close($con);
             }
             ?>
 

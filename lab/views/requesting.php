@@ -1,6 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Manila');
 include 'header.php';
+include 'connect.php';
 $getId = $_GET['id'];
 ?>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 col-md-2 sidebar">
@@ -154,7 +155,7 @@ $getId = $_GET['id'];
                     <div class="panel-body">
                         <form action="codes" method="GET">
                             <?php
-                            $con = mysqli_connect("localhost", "root", "", "lms20");
+
                             $query = mysqli_query($con, "SELECT * FROM request WHERE id ='$getId'");
                             while ($row = mysqli_fetch_array($query)) {
                                 ?>
