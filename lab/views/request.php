@@ -172,8 +172,8 @@ include 'connect.php';
                         </thead>
                         <tbody>
                             <?php
-                            $con = mysqli_connect("localhost", "root", "", "lms20");
-
+                            // $con = mysqli_connect("localhost", "root", "", "lms20");
+                            
                             $query = mysqli_query($con, "SELECT * FROM request ORDER BY id DESC");
                             while ($row = mysqli_fetch_array($query)) {
                                 ?>
