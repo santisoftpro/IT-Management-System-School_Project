@@ -89,7 +89,7 @@ if (isset($_POST['add_newstudent'])) {
         }
         $_SESSION['status'] = 'success';
         $_SESSION["msg"] = "Student Inserted Successfully";
-        echo smtp_mailer($email, "Student Insertion", "Hello $s_compus. The new Student details: $sid_number, $s_fname, $s_lname");
+        echo smtp_mailer($email, "Student Insertion", "Hello $s_compus. The new Student details: student id = $sid_number, First Name= $s_fname, Last Name= $s_lname");
         header("Location: members");
         exit();
     } elseif ($results == 2) {
