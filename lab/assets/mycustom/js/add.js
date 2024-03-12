@@ -320,6 +320,10 @@ $('.add_student').click(function () {
 						<input type="number" name="sid_number" class="form-control" required autocomplete="off">\
 					</div>\
 					<div class="form-group">\
+						<label>First Name</label>\
+						<input type="text" name="f_fname" class="form-control" required autocomplete="off">\
+					</div>\
+					<div class="form-group">\
 						<label>Last Name</label>\
 						<input type="text" name="s_lname" class="form-control text-capitalize" required autocomplete="off">\
 					</div>\
@@ -381,7 +385,7 @@ $('.add_student').click(function () {
 						</div>\
 					</div>\
 					<div class="form-group">\
-						<button class="btn btn-primary btn_faculty" type="submit"><i class="fa fa-plus"></i> Add</button>\
+						<button class="btn btn-primary btn_faculty" type="submit" name ="add_newstudent"><i class="fa fa-plus"></i> Add</button>\
 						<button class="btn btn-danger btn_frm_add" type="reset"><i class="fa fa-remove"></i> Cancel</button>\
 					</div>\
 				</form>';
