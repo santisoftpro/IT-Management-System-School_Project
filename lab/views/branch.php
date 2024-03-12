@@ -260,13 +260,6 @@ include 'connect.php';
             ini_set('display_errors', 1);
 
             if (isset($_POST['submit_branch'])) {
-                // Database connection
-                $con = mysqli_connect("localhost", "root", "", "lms20");
-
-                // Check if the connection is successful
-                if (!$con) {
-                    die("Connection failed: " . mysqli_connect_error());
-                }
 
                 // Data validation and sanitization
                 $name = mysqli_real_escape_string($con, $_POST['b_name']);
