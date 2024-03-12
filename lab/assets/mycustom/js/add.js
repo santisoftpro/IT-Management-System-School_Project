@@ -312,7 +312,7 @@ $('.add_student').click(function () {
 
 	$('.divedit-member').toggle(effect, options, duration);
 
-	var form = '<form class="frm_add_student">\
+	var form = '<form class="frm_add_student" action="function" method="POST>\
 					<br/><br/><h4 class=""></h4>\
 					<hr>\
 					<div class="form-group">\
