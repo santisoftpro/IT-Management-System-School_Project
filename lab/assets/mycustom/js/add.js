@@ -312,7 +312,7 @@ $('.add_student').click(function () {
 
 	$('.divedit-member').toggle(effect, options, duration);
 
-	var form = '<form class="frm_add_student" action="function" method="POST>\
+	var form = '<form class="frm_add_student" action="function" method="POST">\
 					<br/><br/><h4 class=""></h4>\
 					<hr>\
 					<div class="form-group">\
@@ -336,7 +336,7 @@ $('.add_student').click(function () {
 						</select>\
 					</div>\
 					<div class="form-group">\
-					<label>Compus</label>\
+					<label>Select Compus</label>\
 					<select name="s_compus" class="form-control" required>\
 						<option disabled selected>Your Compus</option>\
 						<option>Kigali Compus</option>\
