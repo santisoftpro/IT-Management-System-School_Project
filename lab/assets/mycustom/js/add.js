@@ -390,7 +390,7 @@ $('.add_student').click(function () {
 					</div>\
 				</form>';
 
-	$('').html(form);
+	$('.member-form').html(form);
 	$('.').click(function (e) {
 		$('.divedit-member').toggle(effect, options, duration);
 	});
