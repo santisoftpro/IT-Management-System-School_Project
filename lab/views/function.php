@@ -69,7 +69,7 @@ function add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_compus, $
 
 if (isset($_POST['add_newstudent'])) {
     $sid_number = trim($_POST['sid_number']);
-    $s_fname = ucwords(trim($_POST['s_fname']));
+    $s_fname = ucwords(trim($_POST['f_fname']));
     $s_lname = ucwords(trim($_POST['s_lname']));
     $s_gender = trim($_POST['s_gender']);
     $s_compus = trim($_POST['s_compus']);
