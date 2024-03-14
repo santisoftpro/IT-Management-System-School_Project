@@ -317,7 +317,10 @@ include 'connect.php';
 
 
 
-<?php include 'footer.php'; ?>
+<?php
+include '../js/script.php';
+include 'footer.php';
+?>
 
 <script type="text/javascript">
     $(document).ready(function () {

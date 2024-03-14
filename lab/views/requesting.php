@@ -173,7 +173,7 @@ $getId = $_GET['id'];
                             <div class="form-group">
                                 <label class="">status</label>
                                 <select class="form-control input-lg" name="status" required="required">
-                                    <option value="Padding">Padding</option>
+                                    <option value="Pedding">Pedding</option>
                                     <option value="Accepted">Accepted</option>
                                     <option value="Waiting">Waiting</option>
                                     <option value="Diclined">Diclined</option>
