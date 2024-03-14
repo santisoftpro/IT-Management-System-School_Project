@@ -67,6 +67,41 @@ function add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_compus, $
     }
 }
 
+
+function add_room($name, $compus_name)
+{
+    global $conn;
+
+    $h_desc = 'add new room ' . $name;
+    $h_tbl = 'room';
+    $sessionid = $_SESSION['admin_id'];
+    $sessiontype = $_SESSION['admin_type'];
+
+    $select = $conn->prepare("SELECT * FROM room WHERE rm_name = ?");
+    $select->execute(array($name));
+    $row = $select->rowCount();
+
+    if ($row <= 0) {
+        // Prepare and execute the INSERT statement for room
+        $insert_room = $conn->prepare("INSERT INTO room(rm_name, branch_name, rm_status) VALUES (?, ?, ?)");
+        $insert_room->execute(array($name, $compus_name, 1));
+
+        // Prepare and execute the INSERT statement for history_logs
+        $insert_history = $conn->prepare("INSERT INTO history_logs(description, table_name, user_id, user_type) VALUES (?, ?, ?, ?)");
+        $insert_history->execute(array($h_desc, $h_tbl, $sessionid, $sessiontype));
+
+        // Check if both inserts were successful
+        if ($insert_room->rowCount() > 0 && $insert_history->rowCount() > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    } else {
+        return 2;
+    }
+}
+
+
 if (isset($_POST['add_newstudent'])) {
     $sid_number = trim($_POST['sid_number']);
     $s_fname = ucwords(trim($_POST['f_fname']));
@@ -89,7 +124,7 @@ if (isset($_POST['add_newstudent'])) {
         }
         $_SESSION['status'] = 'success';
         $_SESSION["msg"] = "Student Inserted Successfully";
-        echo smtp_mailer($email, "Student Insertion", "Hello $s_compus. The new Student details: student id = $sid_number,  Full Name $s_fname  $s_lname");
+        echo smtp_mailer($email, "Student Insertion", "Hello $s_compus. The new Student details: student id = $sid_number,  Full Name: $s_fname  $s_lname");
         header("Location: members");
         exit();
     } elseif ($results == 2) {
@@ -100,6 +135,26 @@ if (isset($_POST['add_newstudent'])) {
         $_SESSION['status'] = 'error';
         $_SESSION["msg"] = "Failed to add student";
         header("Location: members");
+    }
+}
+
+
+if (isset($_POST['add_room'])) {
+    $name = strtolower($_POST['name']);
+    $campus_name = strtolower($_POST['branches']); // Corrected variable name
+    $results = $add_function->add_room($name, $campus_name);
+    if ($results == 1) {
+        $_SESSION['status'] = 'success';
+        $_SESSION["msg"] = "Room Inserted Successfully";
+        header("Location: room");
+    } elseif ($results == 2) {
+        $_SESSION['status'] = 'error';
+        $_SESSION["msg"] = "Room already exists";
+        header("Location: room");
+    } else {
+        $_SESSION['status'] = 'error';
+        $_SESSION["msg"] = "Failed to add Room";
+        header("Location: room");
     }
 }
 ?>
