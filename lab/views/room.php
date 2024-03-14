@@ -224,6 +224,25 @@ include 'header.php';
 					<input type="hidden" name="edit_rm_id">
 				</div>
 				<div class="form-group">
+					<label>Branch Name</label>
+
+
+					<?php
+					include './connect.php';
+					$query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$_SESSION[branch_name]'");
+					while ($rw = mysqli_fetch_array($query)) {
+						?>
+
+						<input type="text" name="branches" class="form-control" value="<?= $rw['branche_name']; ?>"
+							readonly>
+						<?php
+					}
+
+					?>
+
+
+				</div>
+				<div class="form-group">
 					<div class="col-md-6">
 						<button class="btn btn-danger btn-block cancel_editroom" type="button">
 							<i class="fa fa-remove"></i>
