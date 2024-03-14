@@ -169,20 +169,7 @@ include 'header.php';
 							<div class="form-group">
 								<label>Select Room</label>
 								<select class="form-control" name="reserve_room" required>
-									<option selected disabled>Select Room Name</option>
-									<?php
-
-									$sql = "SELECT * FROM room";
-									$run_sql = mysqli_query($con, $sql);
-									if ($row = mysqli_fetch_array($run_sql)) {
-										?>
-										<option value="<?= $row['id'] ?>">
-											<?= $row['rm_name'] . " --> " . $row['branch_name'] ?>
-										</option>
-										<?php
-									}
-
-									?>
+									<option></option>
 								</select>
 							</div>
 							<div class="form-group">
