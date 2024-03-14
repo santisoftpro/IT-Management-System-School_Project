@@ -225,15 +225,16 @@ include 'header.php';
 				</div>
 				<div class="form-group">
 					<label>Branch Name</label>
+					<select name="e_branch" class="form-control" required>
+
+						<?php
+						include './connect.php';
+						$query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$_SESSION[branch_name]'");
+
+						while ($rw = mysqli_fetch_array($query)) {
+							?>
 
 
-					<?php
-					include './connect.php';
-					$query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$_SESSION[branch_name]'");
-					while ($rw = mysqli_fetch_array($query)) {
-						?>
-
-						<select name="e_branch" class="form-control" required>
 							<option disabled selected>Please select status</option>
 							<?php
 
@@ -248,14 +249,11 @@ include 'header.php';
 							}
 
 							?>
+							<?php
+						}
 
-						</select>
-						<?php
-					}
-
-					?>
-
-
+						?>
+					</select>
 				</div>
 				<div class="form-group">
 					<div class="col-md-6">
