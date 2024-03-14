@@ -140,7 +140,7 @@ if (isset($_POST['add_newstudent'])) {
 
 
 if (isset($_POST['add_room'])) {
-    $name = strtolower($_POST['room_name']);
+    $name = "Room " . strtolower($_POST['room_name']);
     $campus_name = strtolower($_POST['e_branch']); // Corrected variable name
     $results = add_room($name, $campus_name);
     if ($results == 1) {
