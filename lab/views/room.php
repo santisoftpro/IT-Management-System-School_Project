@@ -169,12 +169,42 @@ include 'header.php';
 <div class="right-sidebar room-side">
 	<div class="sidebar-form">
 		<div class="container-fluid">
-			<form class="frm_addroom">
+			<form class="frm_addroom" action="function" method="POST">
 				<h4 class="alert bg-success"><i class="fa fa-plus"></i> Add Room</h4>
 				<div class="form-group">
 					<label>Room Number</label>
 					<input type="number" name="room_name" min="0" class="form-control" autofocus autocomplete="off"
 						required>
+				</div>
+				<div class="form-group">
+					<label>Branch Name</label>
+					<select name="e_branch" class="form-control" required>
+						<option disabled selected>Please select status</option>
+						<?php
+						include './connect.php';
+						$query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$_SESSION[branch_name]'");
+
+						while ($rw = mysqli_fetch_array($query)) {
+							?>
+
+							<?php
+
+							$query = mysqli_query($con, "SELECT * FROM branches");
+							while ($rw = mysqli_fetch_array($query)) {
+								?>
+
+								<option value="<?= $rw['branche_name']; ?>">
+									<?= $rw['branche_name']; ?>
+								</option>
+								<?php
+							}
+
+							?>
+							<?php
+						}
+
+						?>
+					</select>
 				</div>
 				<div class="form-group">
 					<div class="row">
@@ -185,7 +215,7 @@ include 'header.php';
 							</button>
 						</div>
 						<div class="col-md-6">
-							<button class="btn btn-primary btn-block" type="submit">
+							<button class="btn btn-primary btn-block" type="submit" name="add_room">
 								SAVE
 								<i class="fa fa-check"></i>
 							</button>
@@ -219,14 +249,14 @@ include 'header.php';
 			<form class="frm_editroom">
 				<h4 class="alert bg-success"><i class="fa fa-edit"></i> Edit Room</h4>
 				<div class="form-group">
-					<label>Room Name</label>
+					<label>Room Name hello</label>
 					<input type="text" name="edit_rm_name" class="form-control" autofocus required autocomplete="off">
 					<input type="hidden" name="edit_rm_id">
 				</div>
 				<div class="form-group">
 					<label>Branch Name</label>
 					<select name="e_branch" class="form-control" required>
-
+						<option disabled selected>Please select status</option>
 						<?php
 						include './connect.php';
 						$query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$_SESSION[branch_name]'");
@@ -235,7 +265,7 @@ include 'header.php';
 							?>
 
 
-							<option disabled selected>Please select status</option>
+
 							<?php
 
 							$query = mysqli_query($con, "SELECT * FROM branches");
