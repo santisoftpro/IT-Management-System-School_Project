@@ -141,7 +141,7 @@ include './connect.php';
 
 <form action="branch-code" method="POST" enctype="multipart/form-data" style="margin-left: 400px; margin-top: 40px;">
     <?php
-    $branch_query = mysqli_query($conn, "SELECT * FROM branches WHERE branch_id = '$_GET[branch_id]'");
+    $branch_query = mysqli_query($con, "SELECT * FROM branches WHERE branch_id = '$_GET[branch_id]'");
     while ($row = mysqli_fetch_array($branch_query)) {
 
         ?>
