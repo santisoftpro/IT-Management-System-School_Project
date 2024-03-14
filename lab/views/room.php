@@ -216,27 +216,12 @@ include 'header.php';
 <div class="right-sidebar editroom-side">
 	<div class="sidebar-form">
 		<div class="container-fluid">
-			<form action="function" method="POST" class="frm_editroom">
+			<form class="frm_editroom">
 				<h4 class="alert bg-success"><i class="fa fa-edit"></i> Edit Room</h4>
 				<div class="form-group">
 					<label>Room Name</label>
 					<input type="text" name="edit_rm_name" class="form-control" autofocus required autocomplete="off">
 					<input type="hidden" name="edit_rm_id">
-				</div>
-				<div class="form-group">
-					<label>Branch Name</label>
-					<?php
-					$query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$_SESSION[branch_name]'");
-					while ($rw = mysqli_fetch_array($query)) {
-						?>
-
-						<input type="text" name="branches" class="form-control" value="<?= $rw['branche_name']; ?>"
-							readonly>
-						<?php
-					}
-
-					?>
-
 				</div>
 				<div class="form-group">
 					<div class="col-md-6">
@@ -246,7 +231,7 @@ include 'header.php';
 						</button>
 					</div>
 					<div class="col-md-6">
-						<button class="btn btn-primary btn-block" type="submit" name="add_room">
+						<button class="btn btn-primary btn-block" type="submit">
 							UPDATE
 							<i class="fa fa-check"></i>
 						</button>
