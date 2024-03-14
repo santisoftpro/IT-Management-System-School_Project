@@ -169,7 +169,7 @@ include 'header.php';
 <div class="right-sidebar room-side">
 	<div class="sidebar-form">
 		<div class="container-fluid">
-			<form class="frm_addroom" action="function" method="POST">
+			<form class="" action="function" method="POST">
 				<h4 class="alert bg-success"><i class="fa fa-plus"></i> Add Room</h4>
 				<div class="form-group">
 					<label>Room Number</label>
