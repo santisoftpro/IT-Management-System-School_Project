@@ -233,8 +233,23 @@ include 'header.php';
 					while ($rw = mysqli_fetch_array($query)) {
 						?>
 
-						<input type="text" name="branches" class="form-control" value="<?= $rw['branche_name']; ?>"
-							readonly>
+						<select name="e_branch" class="form-control" required>
+							<option disabled selected>Please select status</option>
+							<?php
+
+							$query = mysqli_query($con, "SELECT * FROM branches");
+							while ($rw = mysqli_fetch_array($query)) {
+								?>
+
+								<option value="<?= $rw['branche_name']; ?>">
+									<?= $rw['branche_name']; ?>
+								</option>
+								<?php
+							}
+
+							?>
+
+						</select>
 						<?php
 					}
 
