@@ -182,7 +182,7 @@ include 'header.php';
 						<option disabled selected>Please select status</option>
 						<?php
 						include './connect.php';
-						$query = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$_SESSION[branch_name]'");
+						$query = mysqli_query($con, "SELECT * FROM branches");
 
 						while ($rw = mysqli_fetch_array($query)) {
 							?>
