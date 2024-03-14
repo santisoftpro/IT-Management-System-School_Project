@@ -1,6 +1,8 @@
 <?php
 date_default_timezone_set('Asia/Manila');
 include 'header.php';
+include '../views/connect.php';
+;
 ?>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 col-md-2 sidebar">
 	<form role="search">
@@ -179,7 +181,7 @@ include 'header.php';
 								</thead>
 								<tbody>
 									<?php
-									$con = mysqli_connect("localhost", "root", "", "lms20");
+
 									$name = $_SESSION['branch_name'];
 									$query = mysqli_query($con, "SELECT * FROM item_stock 
 									LEFT JOIN item ON item.id = item_stock.item_id
@@ -266,7 +268,7 @@ include 'header.php';
 								</thead>
 								<tbody>
 									<?php
-									$con = mysqli_connect("localhost", "root", "", "lms20");
+
 									$name = $_SESSION['branch_name'];
 									$query = mysqli_query($con, "SELECT * FROM item LEFT JOIN item_stock ON item_stock.item_id = item.id WHERE item.branch_name = '$name' GROUP BY item.i_category");
 									while ($row = mysqli_fetch_array($query)) {
@@ -415,7 +417,7 @@ include 'header.php';
 										</thead>
 										<tbody>
 											<?php
-											$con = mysqli_connect("localhost", "root", "", "lms20");
+
 											$name = $_SESSION['branch_name'];
 											if (isset($_POST['month']) && isset($_POST['year']) && $_POST['month'] != "" && $_POST['year'] != "") {
 												$sql = "SELECT *, GROUP_CONCAT(item.i_deviceID, ' - ' ,item.i_category,  '<br/>') item_borrow FROM borrow

@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-$conn = mysqli_connect('localhost', 'root', '', 'lms20');
+include './connect.php';
 ?>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 col-md-2 sidebar">
     <form role="search">

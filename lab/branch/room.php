@@ -1,6 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Manila');
 include 'header.php';
+include '../views/connect.php';
 ?>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 col-md-2 sidebar">
     <form role="search">
@@ -174,7 +175,7 @@ include 'header.php';
                         </thead>
                         <tbody>
                             <?php
-                            $con = mysqli_connect("localhost", "root", "", "lms20");
+
                             $name = $_SESSION['branch_name'];
                             $query = mysqli_query($con, "SELECT * FROM room WHERE branch_name ='$_SESSION[branch_name]'");
                             while ($row = mysqli_fetch_array($query)) {

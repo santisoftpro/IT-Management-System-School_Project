@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$con = mysqli_connect("localhost", "root", "", "lms20");
+include '../views/connect.php';
 include('smtp/PHPMailerAutoload.php');
 $fname = $_GET['fname'];
 $branch_name = $_GET['branches'];

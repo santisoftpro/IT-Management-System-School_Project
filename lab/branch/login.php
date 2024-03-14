@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost", "root", "", "lms20");
+include '../views/connect.php';
 ?>
 
 

@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-$con = mysqli_connect("localhost", "root", "", "lms19");
+include '../views/connect.php';
 ?>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 col-md-2 sidebar">
 	<form role="search">
@@ -167,7 +167,7 @@ $con = mysqli_connect("localhost", "root", "", "lms19");
 						</thead>
 						<tbody>
 							<?php
-							$con = mysqli_connect("localhost", "root", "", "lms20");
+
 							$name = $_SESSION['branch_name'];
 							$query = mysqli_query($con, "SELECT * FROM user WHERE branches = '$name'");
 							$count = mysqli_num_rows($query);

@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "lms20");
+include_once '../views/connect.php';
 if (isset($_POST['save_user'])) {
     $name = $_POST['u_fname'];
     $username = $_POST['u_username'];
