@@ -116,7 +116,7 @@ if (isset ($_POST['add_newstudent'])) {
     $results = add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_compus, $s_contact, $s_department, $s_major, $s_year, $s_section);
 
     if ($results == 1) {
-        require './connect.php'; // Assuming this file connects to the database
+        include '../views/connect.php'; // Assuming this file connects to the database
         $sql = mysqli_query($con, "SELECT * FROM branches WHERE branche_name='$s_compus'");
         while ($row = mysqli_fetch_array($sql)) {
             $email = $row["emails"];
