@@ -137,7 +137,7 @@ include '../views/connect.php';
             </li>
             <?php
         }
-        ($_SESSION['branch_type'] == 3) ? include('../views/include_history.php') : false;
+        ($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
         ?>
     </ul>
 </div><!--/.sidebar-->
@@ -213,7 +213,7 @@ include '../views/connect.php';
 <div class="right-sidebar room-side">
     <div class="sidebar-form">
         <div class="container-fluid">
-            <form class="frm_addroom">
+            <form class="" action="function" method="POST">
                 <h4 class="alert bg-success"><i class="fa fa-plus"></i> Add Room</h4>
                 <div class="form-group">
                     <label>Room Number</label>
@@ -230,7 +230,7 @@ include '../views/connect.php';
                     while ($rw = mysqli_fetch_array($query)) {
                         ?>
 
-                        <input type="text" name="branches" class="form-control" value="<?= $rw['branche_name']; ?>"
+                        <input type="text" name="e_branch" class="form-control" value="<?= $rw['branche_name']; ?>"
                             readonly>
                         <?php
                     }
@@ -248,7 +248,7 @@ include '../views/connect.php';
                             </button>
                         </div>
                         <div class="col-md-6">
-                            <button class="btn btn-primary btn-block" type="submit">
+                            <button class="btn btn-primary btn-block" type="submit" name="add_room">
                                 SAVE
                                 <i class="fa fa-check"></i>
                             </button>
@@ -325,7 +325,10 @@ include '../views/connect.php';
 </div>
 
 
-<?php include 'footer.php'; ?>
+<?php
+include '../js/script.php';
+include 'footer.php';
+?>
 
 <script type="text/javascript">
     $(document).ready(function () {
