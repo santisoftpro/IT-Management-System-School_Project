@@ -397,7 +397,7 @@ $('.add_student').click(function () {
 
 	$('.frm_add_student').submit(function (e) {
 		e.preventDefault();
-		var frmdata = $(this).serialize() + '&key=add_newstudent';
+		var frmdata = $(this).serialize() + '&key=add_newstudent_test';
 
 		$.ajax({
 			type: "POST",
