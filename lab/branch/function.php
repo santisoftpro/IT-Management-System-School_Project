@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('smtp/PHPMailerAutoload.php');
+include ('smtp/PHPMailerAutoload.php');
 include '../class/config/config.php';
 
 function smtp_mailer($to, $subject, $msg)
@@ -39,8 +39,8 @@ function add_newstudent($sid_number, $s_fname, $s_lname, $s_gender, $s_compus, $
 
     $h_desc = 'add new student';
     $h_tbl = 'client';
-    $sessionid = $_SESSION['admin_id'];
-    $sessiontype = $_SESSION['admin_type'];
+    $sessionid = $_SESSION['branch_id'];
+    $sessiontype = $_SESSION['branch_type'];
 
     $type = 'Student';
 
@@ -102,7 +102,7 @@ function add_room($name, $compus_name)
 }
 
 
-if (isset($_POST['add_newstudent'])) {
+if (isset ($_POST['add_newstudent'])) {
     $sid_number = trim($_POST['sid_number']);
     $s_fname = ucwords(trim($_POST['f_fname']));
     $s_lname = ucwords(trim($_POST['s_lname']));
@@ -139,7 +139,7 @@ if (isset($_POST['add_newstudent'])) {
 }
 
 
-if (isset($_POST['add_room'])) {
+if (isset ($_POST['add_room'])) {
     $name = "Room " . strtolower($_POST['room_name']);
     $campus_name = strtolower($_POST['e_branch']); // Corrected variable name
     $results = add_room($name, $campus_name);
