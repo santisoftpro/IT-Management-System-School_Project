@@ -34,7 +34,7 @@ include 'header.php';
 				</li>
 
 
-				<li class="">
+				<li>
 					<a class="" href="new">
 						<svg class="glyph stroked plus sign">
 							<use xlink:href="#stroked-plus-sign" />
@@ -50,8 +50,8 @@ include 'header.php';
 						Borrowed Items
 					</a>
 				</li>
-				<li class="active">
-					<a class="" href="#">
+				<li>
+					<a class="" href="return">
 						<svg class="glyph stroked checkmark">
 							<use xlink:href="#stroked-checkmark" />
 						</svg>
@@ -60,7 +60,7 @@ include 'header.php';
 				</li>
 			</ul>
 		</li>
-		<?php if ($_SESSION['admin_type'] == 1) { ?>
+		<?php if ($_SESSION['branch_type'] == 3) { ?>
 			<li>
 				<a href="items">
 					<svg class="glyph stroked desktop">
@@ -96,15 +96,16 @@ include 'header.php';
 			<li>
 				<a href="report">
 					<svg class="glyph stroked line-graph">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-line-graph" />
+						<use xlink:href="#stroked-line-graph" />
 					</svg>
 					Graph
 				</a>
 			</li>
-			<li>
+
+			<li class="">
 				<a href="manageReport">
 					<svg class="glyph stroked line-graph">
-						<use xlink:href="#stroked-line-graph" />
+						<use xlink:href="#stroked-clipboard-with-paper" />
 					</svg>
 					Reports
 				</a>
@@ -119,7 +120,7 @@ include 'header.php';
 			</li>
 			<?php
 		}
-		($_SESSION['admin_type'] == 1) ? include('include_history.php') : false;
+		($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
 		?>
 	</ul>
 </div><!--/.sidebar-->

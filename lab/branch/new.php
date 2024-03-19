@@ -125,7 +125,7 @@ include 'header.php';
 			</li>
 			<?php
 		}
-		($_SESSION['branch_type'] == 3) ? include('../views/include_history.php') : false;
+		($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
 		?>
 	</ul>
 </div><!--/.sidebar-->
@@ -176,7 +176,7 @@ include 'header.php';
 									required="required">
 									<option></option>
 								</select>
-								<input type="text" name="user_id" value="<?php echo $_SESSION['branch_id']; ?>">
+								<input type="hidden" name="user_id" value="<?php echo $_SESSION['branch_id']; ?>">
 							</div>
 							<div class="form-group">
 								<label>Select Room</label>

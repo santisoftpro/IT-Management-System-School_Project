@@ -74,8 +74,8 @@ function add_room($name, $compus_name)
 
     $h_desc = 'add new room ' . $name;
     $h_tbl = 'room';
-    $sessionid = $_SESSION['admin_id'];
-    $sessiontype = $_SESSION['admin_type'];
+    $sessionid = $_SESSION['branch_id'];
+    $sessiontype = $_SESSION['branch_type'];
 
     $select = $conn->prepare("SELECT * FROM room WHERE rm_name = ?");
     $select->execute(array($name));

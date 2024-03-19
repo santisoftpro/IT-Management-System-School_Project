@@ -142,6 +142,43 @@ $.ajax({
         console.log(data.statusText);
     });
 
+// display item to display for branch
+$.ajax({
+    type: "POST",
+    url: "../class/display/display",
+    data: {
+        key: "display_item_borrow_branch",
+    }
+})
+    .done(function (data) {
+        if (data != '') {
+            var ndata = JSON.parse(data);
+
+            var select = "";
+            $.each(ndata, function (a, x) {
+                // console.log(x);
+                select += "<option value='" + x.id + "'>"
+                    + x.deviceid + " - "
+                    + x.category + " -  "
+                    + x.brand + " -  ["
+                    + x.stockleft + " in stock]  - "
+                    + x.status
+                    + "</option>";
+            });
+            // console.log(select);
+            $('.borrowitembranch').html(select).select2({
+                placeholder: "Select item to borrow",
+                maximumSelectionLength: 5,
+                tokenSeparators: [',', ' ']
+            });
+        } else {
+
+        }
+    })
+    .fail(function (data) {
+        console.log(data.statusText);
+    });
+
 
 //borrow transaction
 $.ajax({

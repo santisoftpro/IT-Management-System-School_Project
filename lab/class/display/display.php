@@ -625,7 +625,7 @@ class display
 		$sql = $conn->prepare('SELECT *, item_stock.id as re_id, item.id as itemid FROM item_stock
 									LEFT JOIN item ON item.id = item_stock.item_id
 									WHERE item_stock.items_stock > ? AND item.branch_name =? ORDER BY item_status ASC');
-		$sql->execute(array(0, $branch_name));
+		$sql->execute(array(0, $_SESSION['branch_name']));
 		$row = $sql->rowCount();
 		$fetch = $sql->fetchAll();
 		if ($row > 0) {
@@ -677,20 +677,20 @@ class display
 	public function display_return()
 	{
 		global $conn;
-		if (isset($_POST['month']) && isset($_POST['year']) && $_POST['month'] != "" && $_POST['year'] != "") {
+		if (isset ($_POST['month']) && isset ($_POST['year']) && $_POST['month'] != "" && $_POST['year'] != "") {
 			$sql = $conn->prepare("SELECT *, GROUP_CONCAT(item.i_deviceID, ' - ' ,item.i_category,  '<br/>') item_borrow FROM borrow
 								 	LEFT JOIN item_stock ON item_stock.id = borrow.stock_id
 								 	LEFT JOIN item ON item.id = item_stock.item_id
 								 	LEFT JOIN member ON member.id = borrow.member_id
 								 	WHERE MONTH(borrow.date_borrow) = " . $_POST['month'] . " AND  YEAR(borrow.date_borrow) = " . $_POST['year'] . "
 								 	GROUP BY borrow.borrowcode");
-		} else if (isset($_POST['month']) && $_POST['month'] != "") {
+		} else if (isset ($_POST['month']) && $_POST['month'] != "") {
 			$sql = $conn->prepare("SELECT *, GROUP_CONCAT(item.i_deviceID, ' - ' ,item.i_category,  '<br/>') item_borrow FROM borrow
 								 	LEFT JOIN item_stock ON item_stock.id = borrow.stock_id
 								 	LEFT JOIN item ON item.id = item_stock.item_id
 								 	LEFT JOIN member ON member.id = borrow.member_id
 								 	WHERE MONTH(borrow.date_borrow) = " . $_POST['month'] . " GROUP BY borrow.borrowcode");
-		} else if (isset($_POST['year']) && $_POST['year'] != "") {
+		} else if (isset ($_POST['year']) && $_POST['year'] != "") {
 			$sql = $conn->prepare("SELECT *, GROUP_CONCAT(item.i_deviceID, ' - ' ,item.i_category,  '<br/>') item_borrow FROM borrow
 								 	LEFT JOIN item_stock ON item_stock.id = borrow.stock_id
 								 	LEFT JOIN item ON item.id = item_stock.item_id
@@ -1158,19 +1158,19 @@ class display
 	{
 		global $conn;
 
-		if (isset($_POST['month']) && isset($_POST['year']) && $_POST['month'] != "" && $_POST['year'] != "") {
+		if (isset ($_POST['month']) && isset ($_POST['year']) && $_POST['month'] != "" && $_POST['year'] != "") {
 			$sql = $conn->prepare('SELECT * FROM item_transfer 
 									LEFT JOIN item ON item.id = item_transfer.t_itemID
 									LEFT JOIN room ON room.id = item_transfer.t_roomID
 									LEFT JOIN user ON user.id = item_transfer.userid
 									WHERE MONTH(item_transfer.date_transfer) = ' . $_POST['month'] . ' AND YEAR(item_transfer.date_transfer) = ' . $_POST['year'] . ' AND item_transfer.t_status = ?');
-		} else if (isset($_POST['month']) && $_POST['month'] != "") {
+		} else if (isset ($_POST['month']) && $_POST['month'] != "") {
 			$sql = $conn->prepare('SELECT * FROM item_transfer 
 									LEFT JOIN item ON item.id = item_transfer.t_itemID
 									LEFT JOIN room ON room.id = item_transfer.t_roomID
 									LEFT JOIN user ON user.id = item_transfer.userid
 									WHERE MONTH(item_transfer.date_transfer) = ' . $_POST['month'] . ' AND item_transfer.t_status = ?');
-		} else if (isset($_POST['year']) && $_POST['year'] != "") {
+		} else if (isset ($_POST['year']) && $_POST['year'] != "") {
 			$sql = $conn->prepare('SELECT * FROM item_transfer 
 									LEFT JOIN item ON item.id = item_transfer.t_itemID
 									LEFT JOIN room ON room.id = item_transfer.t_roomID

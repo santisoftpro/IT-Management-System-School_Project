@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url(./Pasted\ image.png) center/cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff29;
+  backdrop-filter: blur(25px);
+  padding: 70px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  border-radius: 35%;
+}
+
+header {
+  font-size: 30px;
+}
+
+header p {
+  font-weight: 900;
+  color: aliceblue;
+}
+
+.form_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.triangle {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.triangle.left {
+  transform: rotate(-90deg);
+}
+
+.triangle.right {
+  transform: rotate(90deg);
+}
+
+input {
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+}
+
+select {
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  background-color: white;
+  width: auto;
+  text-align: center;
+  align-items: center;
+}
+
+option {
+  height: 40px;
+  border: none;
+  outline: none;
+
+}
+
+button {
+  height: 40px;
+  padding: 0 20px;
+  background-color: darkred;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.triangle.btn {
+  background-color: darkred;
+}
+
+a {
+  color: white;
+}
+
+.logo {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  justify-content: center;
+}
+
+.logo img {
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
