@@ -107,7 +107,7 @@ if (isset ($_POST['add_newstudent'])) {
     $s_fname = ucwords(trim($_POST['f_fname']));
     $s_lname = ucwords(trim($_POST['s_lname']));
     $s_gender = trim($_POST['s_gender']);
-    $s_compus = trim($_POST['s_compus']);
+    $s_compus = $_SESSION['branch_name'];
     $s_contact = trim($_POST['s_contact']);
     $s_department = trim($_POST['s_department']);
     $s_major = trim($_POST['s_major']);

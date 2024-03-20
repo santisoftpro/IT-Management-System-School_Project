@@ -93,14 +93,7 @@ include 'header.php';
 					Inventory
 				</a>
 			</li>
-			<li>
-				<a href="report">
-					<svg class="glyph stroked line-graph">
-						<use xlink:href="#stroked-line-graph" />
-					</svg>
-					Graph
-				</a>
-			</li>
+
 			<li>
 				<a href="manageReport">
 					<svg class="glyph stroked line-graph">
@@ -119,7 +112,7 @@ include 'header.php';
 			</li>
 			<?php
 		}
-		($_SESSION['admin_type'] == 1) ? include('include_history.php') : false;
+		($_SESSION['admin_type'] == 1) ? include ('include_history.php') : false;
 		?>
 	</ul>
 </div><!--/.sidebar-->

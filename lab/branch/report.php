@@ -94,15 +94,8 @@ include 'header.php';
           Inventory
         </a>
       </li>
-      <li class="active">
-        <a href="#">
-          <svg class="glyph stroked line-graph">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-line-graph" />
-          </svg>
-          Graph
-        </a>
-      </li>
-      <li>
+
+      <li class="">
         <a href="manageReport">
           <svg class="glyph stroked line-graph">
             <use xlink:href="#stroked-line-graph" />
@@ -110,7 +103,8 @@ include 'header.php';
           Reports
         </a>
       </li>
-      <li>
+
+      <li class="">
         <a href="request">
           <svg class="glyph stroked line-graph">
             <use xlink:href="#stroked-clipboard-with-paper" />
@@ -118,6 +112,8 @@ include 'header.php';
           Request new devices
         </a>
       </li>
+
+
       <li>
         <a href="user">
           <svg class="glyph stroked female user">
@@ -128,7 +124,7 @@ include 'header.php';
       </li>
       <?php
     }
-    ($_SESSION['branch_type'] == 3) ? include('../views/include_history.php') : false;
+    ($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
     ?>
   </ul>
 </div><!--/.sidebar-->

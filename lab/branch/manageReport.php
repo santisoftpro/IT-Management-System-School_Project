@@ -95,14 +95,6 @@ $name = $_SESSION['branch_name'];
                     Inventory
                 </a>
             </li>
-            <li>
-                <a href="report">
-                    <svg class="glyph stroked line-graph">
-                        <use xlink:href="#stroked-line-graph" />
-                    </svg>
-                    Graph
-                </a>
-            </li>
 
             <li class="active">
                 <a href="manageReport">
@@ -122,7 +114,7 @@ $name = $_SESSION['branch_name'];
             </li>
             <?php
         }
-        ($_SESSION['branch_type'] == 3) ? include('../views/include_history.php') : false;
+        ($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
         ?>
     </ul>
 </div><!--/.sidebar-->
@@ -249,7 +241,7 @@ $name = $_SESSION['branch_name'];
                                         $compus = "Kigali Compus";
                                     }
                                     ?>
-                                    <tbody>
+                                    <tbody class="tableRequest">
                                         <td>
                                             <?= $row['m_fname'] . $row['m_lname'] ?>
                                         </td>
@@ -301,7 +293,7 @@ $name = $_SESSION['branch_name'];
 
                             <div class="col-sm-3 pull-right">
                                 <div class="form-group">
-                                    <select id="selectMonth" class="form-control" name="month">
+                                    <select id="selectRequest" class="form-control" name="month">
                                         <option value="" hidden>Select Report</option>
                                         <option value="Padding">Padding Report</option>
                                         <option value="Requested">Requested Report</option>
@@ -610,6 +602,22 @@ $name = $_SESSION['branch_name'];
             e.preventDefault();
             alert("hello");
         });
+
+        $('#selectRequest').on('change', function () {
+            var value = $(this).val();
+            $.ajax({
+                url: "fetch.php",
+                type: "POST",
+                data: "request=" + value;
+                beforeSend: function () {
+                    $(".tableRequest").html("<span>Working...</span>");
+                },
+                success: function () {
+                    $(".container").html(data);
+                }
+            })
+        });
+
     });
 </script>
 <?php include 'footer.php'; ?>

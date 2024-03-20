@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "lms20");
+require './connect.php';
 class Borrow
 {
     public $borrow;

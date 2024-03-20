@@ -94,14 +94,7 @@ include '../views/connect.php';
 					Inventory
 				</a>
 			</li>
-			<li>
-				<a href="report">
-					<svg class="glyph stroked line-graph">
-						<use xlink:href="#stroked-line-graph" />
-					</svg>
-					Reports
-				</a>
-			</li>
+
 			<li>
 				<a href="manageReport">
 					<svg class="glyph stroked line-graph">
@@ -128,7 +121,7 @@ include '../views/connect.php';
 			</li>
 			<?php
 		}
-		($_SESSION['branch_type'] == 3) ? include('../views/include_history.php') : false;
+		($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
 		?>
 	</ul>
 </div><!--/.sidebar-->

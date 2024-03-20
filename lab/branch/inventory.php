@@ -96,14 +96,7 @@ include '../views/connect.php';
 					Inventory
 				</a>
 			</li>
-			<li>
-				<a href="report">
-					<svg class="glyph stroked line-graph">
-						<use xlink:href="#stroked-line-graph" />
-					</svg>
-					Graph
-				</a>
-			</li>
+
 			<li>
 				<a href="manageReport">
 					<svg class="glyph stroked line-graph">
@@ -122,7 +115,7 @@ include '../views/connect.php';
 			</li>
 			<?php
 		}
-		($_SESSION['branch_type'] == 3) ? include('../views/include_history.php') : false;
+		($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
 		?>
 	</ul>
 </div><!--/.sidebar-->
@@ -419,7 +412,7 @@ include '../views/connect.php';
 											<?php
 
 											$name = $_SESSION['branch_name'];
-											if (isset($_POST['month']) && isset($_POST['year']) && $_POST['month'] != "" && $_POST['year'] != "") {
+											if (isset ($_POST['month']) && isset ($_POST['year']) && $_POST['month'] != "" && $_POST['year'] != "") {
 												$sql = "SELECT *, GROUP_CONCAT(item.i_deviceID, ' - ' ,item.i_category,  '<br/>') item_borrow FROM borrow
 																		 LEFT JOIN item_stock ON item_stock.id = borrow.stock_id
 																		 LEFT JOIN item ON item.id = item_stock.item_id
@@ -452,7 +445,7 @@ include '../views/connect.php';
 													<?php
 
 												}
-											} else if (isset($_POST['month']) && $_POST['month'] != "") {
+											} else if (isset ($_POST['month']) && $_POST['month'] != "") {
 												$sql = "SELECT *, GROUP_CONCAT(item.i_deviceID, ' - ' ,item.i_category,  '<br/>') item_borrow FROM borrow
 																		 LEFT JOIN item_stock ON item_stock.id = borrow.stock_id
 																		 LEFT JOIN item ON item.id = item_stock.item_id
@@ -484,7 +477,7 @@ include '../views/connect.php';
 													<?php
 
 												}
-											} else if (isset($_POST['year']) && $_POST['year'] != "") {
+											} else if (isset ($_POST['year']) && $_POST['year'] != "") {
 												$sql = "SELECT *, GROUP_CONCAT(item.i_deviceID, ' - ' ,item.i_category,  '<br/>') item_borrow FROM borrow
 																		 LEFT JOIN item_stock ON item_stock.id = borrow.stock_id
 																		 LEFT JOIN item ON item.id = item_stock.item_id

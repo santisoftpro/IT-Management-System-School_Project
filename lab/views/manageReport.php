@@ -152,7 +152,7 @@ include './connect.php';
             </li>
             <?php
         }
-        ($_SESSION['admin_type'] == 1) ? include('include_history.php') : false;
+        ($_SESSION['admin_type'] == 1) ? include ('include_history.php') : false;
         ?>
     </ul>
 </div><!--/.sidebar-->
@@ -200,17 +200,18 @@ include './connect.php';
                     <div class="tab-content">
                         <div class="tab-pane fade in active dataTables_wrapper no-footer" id="new">
                             <form action="" method="get">
-                                <div class="dt-buttons btn-group"><a
-                                        class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Copy</span></a><a
-                                        class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>CSV</span></a><a
-                                        class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Excel</span></a><a
-                                        class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>PDF</span></a><a
-                                        class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
-                                        aria-controls="DataTables_Table_0"><span>Print</span></a></div>
+                                <div class="dt-buttons btn-group">
+                                    <a class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success"
+                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Copy</span></a>
+                                    <a class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success" tabindex="0"
+                                        aria-controls="DataTables_Table_0"><span>CSV</span></a>
+                                    <a class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success"
+                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Excel</span></a>
+                                    <a class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success" tabindex="0"
+                                        aria-controls="DataTables_Table_0"><span>PDF</span></a>
+                                    <a class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
+                                        aria-controls="DataTables_Table_0"><span>Print</span></a>
+                                </div>
 
                                 <div class="col-sm-1 pull-right">
                                     <div class="form-group text-right">
@@ -689,6 +690,8 @@ include './connect.php';
             });
         });
     });
+
+
 
     fetchData();
     displayBorrowed();

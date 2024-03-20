@@ -90,14 +90,7 @@ include 'header.php';
 					Inventory
 				</a>
 			</li>
-			<li>
-				<a href="report">
-					<svg class="glyph stroked line-graph">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-line-graph" />
-					</svg>
-					Graph
-				</a>
-			</li>
+
 			<li>
 				<a href="manageReport">
 					<svg class="glyph stroked line-graph">
@@ -124,7 +117,7 @@ include 'header.php';
 			</li>
 			<?php
 		}
-		($_SESSION['branch_type'] == 3) ? include('../views/include_history.php') : false;
+		($_SESSION['branch_type'] == 3) ? include ('../views/include_history.php') : false;
 		?>
 	</ul>
 </div><!--/.sidebar-->

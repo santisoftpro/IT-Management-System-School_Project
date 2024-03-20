@@ -103,14 +103,7 @@ include '../views/connect.php';
                     Inventory
                 </a>
             </li>
-            <li>
-                <a href="report">
-                    <svg class="glyph stroked line-graph">
-                        <use xlink:href="#stroked-line-graph" />
-                    </svg>
-                    Graph
-                </a>
-            </li>
+
             <li>
                 <a href="manageReport">
                     <svg class="glyph stroked line-graph">
