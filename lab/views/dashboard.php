@@ -110,6 +110,14 @@ include 'header.php';
 				</a>
 			</li>
 			<li>
+				<a href="manageReport">
+					<svg class="glyph stroked line-graph">
+						<use xlink:href="#stroked-clipboard-with-paper" />
+					</svg>
+					Reports
+				</a>
+			</li>
+			<li>
 				<a href="request">
 					<svg class="glyph stroked line-graph">
 						<use xlink:href="#stroked-clipboard-with-paper" />
@@ -143,7 +151,7 @@ include 'header.php';
 			</li>
 			<?php
 		}
-		($_SESSION['admin_type'] == 1) ? include('include_history.php') : false;
+		($_SESSION['admin_type'] == 1) ? include ('include_history.php') : false;
 		?>
 		<!-- <li>
 				<a href="setting">

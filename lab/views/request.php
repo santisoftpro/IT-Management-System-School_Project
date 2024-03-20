@@ -119,6 +119,14 @@ include 'connect.php';
                     Graph
                 </a>
             </li>
+            <li>
+                <a href="manageReport">
+                    <svg class="glyph stroked line-graph">
+                        <use xlink:href="#stroked-clipboard-with-paper" />
+                    </svg>
+                    Reports
+                </a>
+            </li>
             <li class="active">
                 <a href="request">
                     <svg class="glyph stroked line-graph">
@@ -137,7 +145,7 @@ include 'connect.php';
             </li>
             <?php
         }
-        ($_SESSION['admin_type'] == 1) ? include('include_history.php') : false;
+        ($_SESSION['admin_type'] == 1) ? include ('include_history.php') : false;
         ?>
     </ul>
 </div><!--/.sidebar-->
@@ -286,7 +294,7 @@ include 'connect.php';
             </form>
 
             <?php
-            if (isset($_POST['request'])) {
+            if (isset ($_POST['request'])) {
                 $fname = $_POST['fname'];
                 $branch_name = $_POST['branches'];
                 $message = $_POST['message'];
