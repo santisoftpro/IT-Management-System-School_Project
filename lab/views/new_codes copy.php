@@ -1,5 +1,5 @@
 <?php
-include_once '../views/connect.php';
+include_once 'connect.php';
 if (isset ($_POST['save_user'])) {
     $name = $_POST['u_fname'];
     $username = $_POST['u_username'];
@@ -10,13 +10,9 @@ if (isset ($_POST['save_user'])) {
     $saveUserQuery = mysqli_query($con, "INSERT INTO `user`(`name`, `username`, `password`, `type`, `branches`, `status`) VALUES ('$name','$username ','$password','$userType','$branchName','1')") or die (mysqli_error($con));
 
     if ($saveUserQuery) {
-        $_SESSION['status'] = "success";
-        $_SESSION['msg'] = "User Inserted";
         header("Location: user");
     } else {
-        $_SESSION['status'] = "error";
-        $_SESSION['msg'] = "User Not Inserted";
-        header("Location: user");
+        echo "failed";
     }
 
 }

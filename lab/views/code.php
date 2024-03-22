@@ -1,8 +1,9 @@
 <?php
 require_once '../class/config/config.php';
+
 session_start();
 
-if (isset($_POST['add_eqquipment'])) {
+if (isset ($_POST['add_eqquipment'])) {
 
     $e_model = $_POST['e_model'];
     $e_number = $_POST['e_number'];
@@ -10,7 +11,7 @@ if (isset($_POST['add_eqquipment'])) {
     $e_brand = $_POST['e_brand'];
     $e_description = $_POST['e_description'];
     $e_stock = $_POST['e_stock'];
-    $e_assigned = 200;
+    $e_assigned = 20;
     $e_type = $_POST['e_type'];
     $e_status = $_POST['e_status'];
     $e_mr = $_POST['e_mr'];
@@ -19,10 +20,8 @@ if (isset($_POST['add_eqquipment'])) {
 
     $h_desc = 'add new equipment' . $e_model . ' , ' . $e_category;
     $h_tbl = 'equipment';
-    $sessionid = 1;
-    $sessiontype = 1;
-
-
+    $sessionid = $_SESSION['admin_id'];
+    $sessiontype = $_SESSION['admin_type'];
 
     $sql = $conn->prepare('INSERT INTO item(i_deviceID, i_model, i_category, i_brand, i_description, i_type, item_rawstock, i_mr, branch_name, i_price)
                                             VALUES(?,?,?,?,?,?,?,?,?,?)');
@@ -67,7 +66,7 @@ if (isset($_POST['add_eqquipment'])) {
 
 }
 
-if (isset($_POST['addbrower'])) {
+if (isset ($_POST['addbrower'])) {
 
 
     $name = $_POST['borrow_membername'];

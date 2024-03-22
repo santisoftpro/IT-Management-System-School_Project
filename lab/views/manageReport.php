@@ -201,16 +201,14 @@ include './connect.php';
                         <div class="tab-pane fade in active dataTables_wrapper no-footer" id="new">
                             <form action="" method="get">
                                 <div class="dt-buttons btn-group">
-                                    <a class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Copy</span></a>
-                                    <a class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success" tabindex="0"
-                                        aria-controls="DataTables_Table_0"><span>CSV</span></a>
                                     <a class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Excel</span></a>
-                                    <a class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success" tabindex="0"
-                                        aria-controls="DataTables_Table_0"><span>PDF</span></a>
-                                    <a class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
-                                        aria-controls="DataTables_Table_0"><span>Print</span></a>
+                                        tabindex="0" aria-controls="DataTables_Table_0"
+                                        onclick="exportToExcel()"><span>Excel</span></a><a
+                                        class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success"
+                                        tabindex="0" aria-controls="DataTables_Table_0"
+                                        onclick="printTable()"><span>PDF</span></a><a
+                                        class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
+                                        aria-controls="DataTables_Table_0" onclick="printTable()"><span>Print</span></a>
                                 </div>
 
                                 <div class="col-sm-1 pull-right">
@@ -292,17 +290,15 @@ include './connect.php';
                         </div>
                         <div class="tab-pane fade in active dataTables_wrapper no-footer" id="old">
 
-                            <div class="dt-buttons btn-group"><a
-                                    class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Copy</span></a><a
-                                    class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>CSV</span></a><a
-                                    class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Excel</span></a><a
+                            <div class="dt-buttons btn-group">
+                                <a class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success" tabindex="0"
+                                    aria-controls="DataTables_Table_0"
+                                    onclick="exportToExcel()"><span>Excel</span></a><a
                                     class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>PDF</span></a><a
+                                    aria-controls="DataTables_Table_0" onclick="printTable()"><span>PDF</span></a><a
                                     class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Print</span></a></div>
+                                    aria-controls="DataTables_Table_0" onclick="printTable()"><span>Print</span></a>
+                            </div>
 
                             <div class="col-sm-1 pull-right">
                                 <div class="form-group text-right">
@@ -386,17 +382,16 @@ include './connect.php';
                         </div>
                         <div class="tab-panel fade in active dataTables_wrapper no-footer" id="pulledout">
                             <form action="" method="POST">
-                                <div class="dt-buttons btn-group"><a
-                                        class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Copy</span></a><a
-                                        class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>CSV</span></a><a
-                                        class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Excel</span></a><a
+                                <div class="dt-buttons btn-group">
+                                    <a class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success"
+                                        tabindex="0" aria-controls="DataTables_Table_0"
+                                        onclick="exportToExcel()"><span>Excel</span></a><a
                                         class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>PDF</span></a><a
+                                        tabindex="0" aria-controls="DataTables_Table_0"
+                                        onclick="printTable()"><span>PDF</span></a><a
                                         class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
-                                        aria-controls="DataTables_Table_0"><span>Print</span></a></div>
+                                        aria-controls="DataTables_Table_0" onclick="printTable()"><span>Print</span></a>
+                                </div>
                                 <!-- 
                                 <div class="col-sm-1 pull-right">
                                     <div class="form-group text-right">
@@ -520,7 +515,7 @@ include './connect.php';
                                         <select id="selectBranch" class="form-control">
                                             <option value="" hidden>SELECT COMPUS</option>
                                             <?php
-                                            $con = mysqli_connect("localhost", "root", "", "lms20");
+                                            // $con = mysqli_connect("localhost", "root", "", "lms20");
                                             $query = "SELECT * FROM branches ORDER BY branche_name ASC";
                                             $query_run = mysqli_query($con, $query);
                                             while ($row = mysqli_fetch_array($query_run)) {
@@ -697,5 +692,33 @@ include './connect.php';
     displayBorrowed();
     displayInventory();
 </script>
+<!-- JavaScript functions -->
+<script>
+    function exportToExcel() {
+        const table = document.getElementById('DataTables_Table_0');
+        const html = table.outerHTML;
+        const url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
 
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'table.xls');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportToPdf() {
+        const table = document.getElementById('DataTables_Table_0');
+        const html = table.outerHTML;
+
+        const pdf = new jsPDF();
+        pdf.text(20, 20, 'Table Exported to PDF');
+        pdf.fromHTML(html, 20, 30);
+        pdf.save('table.pdf');
+    }
+
+    function printTable() {
+        window.print();
+    }
+</script>
 <?php include 'footer.php'; ?>

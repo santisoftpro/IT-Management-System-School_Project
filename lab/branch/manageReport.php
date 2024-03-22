@@ -162,18 +162,16 @@ $name = $_SESSION['branch_name'];
                     <div class="tab-content">
                         <div class="tab-pane fade in active dataTables_wrapper no-footer" id="new">
                             <form action="" method="get">
-                                <div class="dt-buttons btn-group"><a
-                                        class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Copy</span></a><a
-                                        class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>CSV</span></a><a
-                                        class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>Excel</span></a><a
+                                <div class="dt-buttons btn-group">
+                                    <a class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success"
+                                        tabindex="0" aria-controls="DataTables_Table_0"
+                                        onclick="exportToExcel()"><span>Excel</span></a><a
                                         class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success"
-                                        tabindex="0" aria-controls="DataTables_Table_0"><span>PDF</span></a><a
+                                        tabindex="0" aria-controls="DataTables_Table_0"
+                                        onclick="printTable()"><span>PDF</span></a><a
                                         class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
-                                        aria-controls="DataTables_Table_0"><span>Print</span></a></div>
-
+                                        aria-controls="DataTables_Table_0" onclick="printTable()"><span>Print</span></a>
+                                </div>
                                 <div class="col-sm-1 pull-right">
                                     <div class="form-group text-right">
                                         <button type="submit" class="btn btn-primary" id="btnReloadList"
@@ -271,40 +269,40 @@ $name = $_SESSION['branch_name'];
                         </div>
                         <div class="tab-pane fade in active dataTables_wrapper no-footer" id="old">
 
-                            <div class="dt-buttons btn-group"><a
-                                    class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Copy</span></a><a
-                                    class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>CSV</span></a><a
-                                    class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Excel</span></a><a
+                            <div class="dt-buttons btn-group">
+                                <a class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success" tabindex="0"
+                                    aria-controls="DataTables_Table_0"
+                                    onclick="exportToExcel()"><span>Excel</span></a><a
                                     class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>PDF</span></a><a
+                                    aria-controls="DataTables_Table_0" onclick="printTable()"><span>PDF</span></a><a
                                     class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Print</span></a></div>
+                                    aria-controls="DataTables_Table_0" onclick="printTable()"><span>Print</span></a>
+                            </div>
+                            <form method="POST">
+                                <div class="col-sm-1 pull-right">
+                                    <div class="form-group text-right">
+                                        <button class="btn btn-primary" id="requestedReport" name="submitRequest">Reload
+                                            List</button>
 
-                            <div class="col-sm-1 pull-right">
-                                <div class="form-group text-right">
-                                    <button class="btn btn-primary" id="requestedReport" name="request">Reload
-                                        List</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3 pull-right">
+
+                                    <div class="form-group">
+                                        <select id="selectRequest" class="form-control" name="selectRequest">
+                                            <option selected disabled>Select Report</option>
+                                            <option value="Padding">Padding Report</option>
+                                            <option value="Requested">Requested Report</option>
+                                            <option value="Waiting">Waiting Report</option>
+                                            <option value="Declined">Declined Report</option>
+                                        </select>
+                                    </div>
 
                                 </div>
-                            </div>
-
-                            <div class="col-sm-3 pull-right">
-                                <div class="form-group">
-                                    <select id="selectRequest" class="form-control" name="month">
-                                        <option value="" hidden>Select Report</option>
-                                        <option value="Padding">Padding Report</option>
-                                        <option value="Requested">Requested Report</option>
-                                        <option value="Waiting">Waiting Report</option>
-                                        <option value="Declined">Declined Report</option>
-                                    </select>
-                                </div>
-                            </div>
-
+                            </form>
                             <table class="table dataTable no-footer" id="DataTables_Table_0" role="grid"
-                                aria-describedby="DataTables_Table_0_info">
+                                aria-describedby="DataTables_Table_0_info" class="requestingReport">
                                 <thead>
                                     <tr>
                                         <th>Names</th>
@@ -315,42 +313,83 @@ $name = $_SESSION['branch_name'];
                                         <th>Respomse</th>
                                     </tr>
                                 </thead>
+
                                 <?php
-                                $sql = "SELECT * FROM request WHERE branch_name='$name' ORDER BY names ASC";
-                                $query_run = mysqli_query($con, $sql);
-                                while ($row = mysqli_fetch_array($query_run)) {
-                                    $date = ($row['dates'] == 'NULL' || $row['dates'] == NULL) ? " --- " : date('F d,Y H:i:s A', strtotime($row['dates']));
-                                    // $date2 = date('F d,Y H:i:s A', strtotime($row['date_borrow']));
-                                    if ($row['branch_name'] != "") {
-                                        $compus = $row['branch_name'];
-                                    } else {
-                                        $compus = "Kigali Compus";
+                                if (isset ($_POST['submitRequest'])) {
+                                    $sql = "SELECT * FROM request WHERE branch_name='$name' AND status='$_POST[selectRequest]' ORDER BY names ASC";
+                                    $query_run = mysqli_query($con, $sql);
+                                    while ($row = mysqli_fetch_array($query_run)) {
+                                        $date = ($row['dates'] == 'NULL' || $row['dates'] == NULL) ? " --- " : date('F d,Y H:i:s A', strtotime($row['dates']));
+                                        // $date2 = date('F d,Y H:i:s A', strtotime($row['date_borrow']));
+                                        if ($row['branch_name'] != "") {
+                                            $compus = $row['branch_name'];
+                                        } else {
+                                            $compus = "Kigali Compus";
+                                        }
+                                        ?>
+                                        <tbody>
+                                            <td>
+                                                <?= $row['names'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $compus ?>
+                                            </td>
+                                            <td>
+                                                <?= $row['messages'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $row['status'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $date ?>
+                                            </td>
+                                            <td>
+                                                <?= $row['response'] ?>
+                                            </td>
+
+
+                                        </tbody>
+                                        <?php
                                     }
-                                    ?>
-                                    <tbody>
-                                        <td>
-                                            <?= $row['names'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $compus ?>
-                                        </td>
-                                        <td>
-                                            <?= $row['messages'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $row['status'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $date ?>
-                                        </td>
-                                        <td>
-                                            <?= $row['response'] ?>
-                                        </td>
+                                } else {
+                                    $sql = "SELECT * FROM request WHERE branch_name='$name' ORDER BY names ASC";
+                                    $query_run = mysqli_query($con, $sql);
+                                    while ($row = mysqli_fetch_array($query_run)) {
+                                        $date = ($row['dates'] == 'NULL' || $row['dates'] == NULL) ? " --- " : date('F d,Y H:i:s A', strtotime($row['dates']));
+                                        // $date2 = date('F d,Y H:i:s A', strtotime($row['date_borrow']));
+                                        if ($row['branch_name'] != "") {
+                                            $compus = $row['branch_name'];
+                                        } else {
+                                            $compus = "Kigali Compus";
+                                        }
+                                        ?>
+                                        <tbody>
+                                            <td>
+                                                <?= $row['names'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $compus ?>
+                                            </td>
+                                            <td>
+                                                <?= $row['messages'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $row['status'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $date ?>
+                                            </td>
+                                            <td>
+                                                <?= $row['response'] ?>
+                                            </td>
 
 
-                                    </tbody>
-                                    <?php
+                                        </tbody>
+                                        <?php
+                                    }
                                 }
+
+
 
                                 ?>
                             </table>
@@ -383,18 +422,15 @@ $name = $_SESSION['branch_name'];
                         </div>
                         <div class="tab-pane fade in active dataTables_wrapper no-footer" id="pulledout">
 
-                            <div class="dt-buttons btn-group"><a
-                                    class="btn btn-default buttons-copy buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Copy</span></a><a
-                                    class="btn btn-default buttons-csv buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>CSV</span></a><a
-                                    class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Excel</span></a><a
+                            <div class="dt-buttons btn-group">
+                                <a class="btn btn-default buttons-excel buttons-html5 btn-sm btn-success" tabindex="0"
+                                    aria-controls="DataTables_Table_0"
+                                    onclick="exportToExcel()"><span>Excel</span></a><a
                                     class="btn btn-default buttons-pdf buttons-html5 btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>PDF</span></a><a
+                                    aria-controls="DataTables_Table_0" onclick="printTable()"><span>PDF</span></a><a
                                     class="btn btn-default buttons-print btn-sm btn-success" tabindex="0"
-                                    aria-controls="DataTables_Table_0"><span>Print</span></a></div>
-
+                                    aria-controls="DataTables_Table_0" onclick="printTable()"><span>Print</span></a>
+                            </div>
 
 
 
@@ -605,19 +641,49 @@ $name = $_SESSION['branch_name'];
 
         $('#selectRequest').on('change', function () {
             var value = $(this).val();
+            // alert(value);
             $.ajax({
-                url: "fetch.php",
+                url: "fetch",
                 type: "POST",
                 data: "request=" + value;
                 beforeSend: function () {
-                    $(".tableRequest").html("<span>Working...</span>");
+                    $(".requestingReport").html("<span>Working...</span>");
                 },
-                success: function () {
-                    $(".container").html(data);
+                success: function (data) {
+                    $(".requestingReport").html(data);
                 }
             })
         });
 
     });
+</script>
+<!-- JavaScript functions -->
+<script>
+    function exportToExcel() {
+        const table = document.getElementById('DataTables_Table_0');
+        const html = table.outerHTML;
+        const url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
+
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'table.xls');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportToPdf() {
+        const table = document.getElementById('DataTables_Table_0');
+        const html = table.outerHTML;
+
+        const pdf = new jsPDF();
+        pdf.text(20, 20, 'Table Exported to PDF');
+        pdf.fromHTML(html, 20, 30);
+        pdf.save('table.pdf');
+    }
+
+    function printTable() {
+        window.print();
+    }
 </script>
 <?php include 'footer.php'; ?>

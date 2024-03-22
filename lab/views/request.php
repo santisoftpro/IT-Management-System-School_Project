@@ -299,8 +299,8 @@ include 'connect.php';
                 $branch_name = $_POST['branches'];
                 $message = $_POST['message'];
 
-                $sql = "INSERT INTO `request`( `names`, `branch_name`,`messages`,`status`, `dates`) VALUES ('$fname','$branch_name','$message','padding',current_timestamp()";
-                $query_run = mysqli_query($con, "INSERT INTO `request`( `names`, `branch_name`,`messages`,`status`, `dates`) VALUES ('$fname','$branch_name','$message','padding',current_timestamp())");
+                $sql = "INSERT INTO `request`( `names`, `branch_name`,`messages`,`status`, `dates`) VALUES ('$fname','$branch_name','$message','pedding',current_timestamp()";
+                $query_run = mysqli_query($con, "INSERT INTO `request`( `names`, `branch_name`,`messages`,`status`, `dates`) VALUES ('$fname','$branch_name','$message','pedding',current_timestamp())");
                 if ($query_run) {
                     ?>
                     <script>
